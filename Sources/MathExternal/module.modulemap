@@ -1,0 +1,4 @@
+module MathExternal [system] [extern_c] {
+    header "module.h"
+    export *
+}
