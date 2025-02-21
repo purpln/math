@@ -6,7 +6,7 @@ let package = Package(name: "Math", products: [
     .library(name: "Math", targets: ["Math"]),
 ], targets: [
     .target(name: "Math", dependencies: [
-        "MathExternal"
+        "Mathematics"
     ]),
-    .systemLibrary(name: "MathExternal"),
+    .systemLibrary(name: "Mathematics"),
 ])

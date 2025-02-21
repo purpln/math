@@ -1,4 +1,4 @@
-@_exported import MathExternal
+@_exported import Mathematics
 
 public extension Comparable {
     func clamp(min: Self, max: Self) -> Self {
