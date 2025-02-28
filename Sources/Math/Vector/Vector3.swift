@@ -148,6 +148,7 @@ public struct Vector3<Scalar: BinaryFloatingPoint & Sendable>: Vectorable, Hasha
 }
 
 public extension Vector3 {
+#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     var half3: Half3 {
         get {
@@ -159,7 +160,7 @@ public extension Vector3 {
             self.z = Scalar(v.2)
         }
     }
-
+#endif
     var float3: Float3 {
         get {
             (Float32(self.x), Float32(self.y), Float32(self.z))
@@ -181,14 +182,14 @@ public extension Vector3 {
             self.z = Scalar(v.2)
         }
     }
-    
+#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     init(_ v: Half3) {
         self.x = Scalar(v.0)
         self.y = Scalar(v.1)
         self.z = Scalar(v.2)
     }
-
+#endif
     init(_ v: Float3) {
         self.x = Scalar(v.0)
         self.y = Scalar(v.1)

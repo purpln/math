@@ -453,6 +453,7 @@ public struct Matrix4<Scalar: BinaryFloatingPoint & Sendable>: Matrixable, Hasha
 }
 
 public extension Matrix4 {
+#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     var half4x4: Half4x4 {
         get { (self.row1.half4, self.row2.half4, self.row3.half4, self.row4.half4) }
@@ -463,7 +464,7 @@ public extension Matrix4 {
             self.row4.half4 = v.3
         }
     }
-    
+#endif
     var float4x4: Float4x4 {
         get { (self.row1.float4, self.row2.float4, self.row3.float4, self.row4.float4) }
         set(v) {
@@ -483,12 +484,12 @@ public extension Matrix4 {
             self.row4.double4 = v.3
         }
     }
-    
+#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     init(_ m: Half4x4) {
         self.init(row1: Vector4(m.0), row2: Vector4(m.1), row3: Vector4(m.2), row4: Vector4(m.3))
     }
-    
+#endif
     init(_ m: Float4x4) {
         self.init(row1: Vector4(m.0), row2: Vector4(m.1), row3: Vector4(m.2), row4: Vector4(m.3))
     }

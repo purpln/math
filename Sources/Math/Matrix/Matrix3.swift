@@ -238,6 +238,7 @@ public struct Matrix3<Scalar: BinaryFloatingPoint & Sendable>: Matrixable, Hasha
 }
 
 public extension Matrix3 {
+#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     var half3x3: Half3x3 {
         get { (self.row1.half3, self.row2.half3, self.row3.half3) }
@@ -247,7 +248,7 @@ public extension Matrix3 {
             self.row3.half3 = v.2
         }
     }
-    
+#endif
     var float3x3: Float3x3 {
         get { (self.row1.float3, self.row2.float3, self.row3.float3) }
         set(v) {
@@ -265,12 +266,12 @@ public extension Matrix3 {
             self.row3.double3 = v.2
         }
     }
-    
+#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     init(_ m: Half3x3) {
         self.init(row1: Vector3(m.0), row2: Vector3(m.1), row3: Vector3(m.2))
     }
-    
+#endif
     init(_ m: Float3x3) {
         self.init(row1: Vector3(m.0), row2: Vector3(m.1), row3: Vector3(m.2))
     }

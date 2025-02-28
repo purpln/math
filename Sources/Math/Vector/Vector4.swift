@@ -109,6 +109,7 @@ public struct Vector4<Scalar: BinaryFloatingPoint & Sendable>: Vectorable, Hasha
 }
 
 public extension Vector4 {
+#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     var half4: Half4 {
         get {
@@ -121,7 +122,7 @@ public extension Vector4 {
             self.w = Scalar(v.3)
         }
     }
-
+#endif
     var float4: Float4 {
         get {
             (Float32(self.x), Float32(self.y), Float32(self.z), Float32(self.w))
@@ -145,7 +146,7 @@ public extension Vector4 {
             self.w = Scalar(v.3)
         }
     }
-
+#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     init(_ v: Half4) {
         self.x = Scalar(v.0)
@@ -153,7 +154,7 @@ public extension Vector4 {
         self.z = Scalar(v.2)
         self.w = Scalar(v.3)
     }
-
+#endif
     init(_ v: Float4) {
         self.x = Scalar(v.0)
         self.y = Scalar(v.1)

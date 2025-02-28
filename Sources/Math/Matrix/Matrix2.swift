@@ -157,6 +157,7 @@ public struct Matrix2<Scalar: BinaryFloatingPoint & Sendable>: Matrixable, Hasha
 }
 
 public extension Matrix2 {
+#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     var half2x2: Half2x2 {
         get { (self.row1.half2, self.row2.half2) }
@@ -165,7 +166,7 @@ public extension Matrix2 {
             self.row2.half2 = newValue.1
         }
     }
-    
+#endif
     var float2x2: Float2x2 {
         get { (self.row1.float2, self.row1.float2) }
         set {
@@ -181,12 +182,12 @@ public extension Matrix2 {
             self.row2.double2 = newValue.1
         }
     }
-    
+#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     init(_ m: Half2x2) {
         self.init(row1: Vector2(m.0), row2: Vector2(m.1))
     }
-    
+#endif
     init(_ m: Float2x2) {
         self.init(row1: Vector2(m.0), row2: Vector2(m.1))
     }

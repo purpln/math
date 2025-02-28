@@ -107,6 +107,7 @@ public struct Vector2<Scalar: BinaryFloatingPoint & Sendable>: Vectorable, Hasha
 }
 
 public extension Vector2 {
+#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     var half2: Half2 {
         get { (Float16(self.x), Float16(self.y)) }
@@ -115,7 +116,7 @@ public extension Vector2 {
             self.y = Scalar(v.1)
         }
     }
-
+#endif
     var float2: Float2 {
         get { (Float32(self.x), Float32(self.y)) }
         set(v) {
@@ -131,13 +132,13 @@ public extension Vector2 {
             self.y = Scalar(v.1)
         }
     }
-
+#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     init(_ v: Half2) {
         self.x = Scalar(v.0)
         self.y = Scalar(v.1)
     }
-
+#endif
     init(_ v: Float2) {
         self.x = Scalar(v.0)
         self.y = Scalar(v.1)
