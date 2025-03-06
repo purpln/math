@@ -1194,8 +1194,8 @@ public struct simd_float3x3: Equatable, Sendable, CustomDebugStringConvertible {
     /// Determinant of the receiver.
     @inlinable
     public var determinant: Float {
-        simd_reduce_add(columns.0 * ((KvShiftLeft1(columns.1) * KvShiftLeft2(columns.2)) as simd_float3 -
-                                     (KvShiftLeft2(columns.1) * KvShiftLeft1(columns.2)) as simd_float3))
+        simd_reduce_add(columns.0 * ((shiftLeft1(columns.1) * shiftLeft2(columns.2)) as simd_float3 -
+                                     (shiftLeft2(columns.1) * shiftLeft1(columns.2)) as simd_float3))
     }
 
 
@@ -2302,9 +2302,9 @@ public struct simd_float4x4: Equatable, Sendable, CustomDebugStringConvertible {
     /// Determinant of the receiver.
     @inlinable
     public var determinant: Float {
-        let c: simd_float4 = columns.0 * ((KvShiftLeft1(columns.1) * ((KvShiftLeft2(columns.2) * KvShiftLeft3(columns.3)) as simd_float4 - (KvShiftLeft3(columns.2) * KvShiftLeft2(columns.3)) as simd_float4)) as simd_float4 +
-                                          (KvShiftLeft2(columns.1) * ((KvShiftLeft3(columns.2) * KvShiftLeft1(columns.3)) as simd_float4 - (KvShiftLeft1(columns.2) * KvShiftLeft3(columns.3)) as simd_float4)) as simd_float4 +
-                                          (KvShiftLeft3(columns.1) * ((KvShiftLeft1(columns.2) * KvShiftLeft2(columns.3)) as simd_float4 - (KvShiftLeft2(columns.2) * KvShiftLeft1(columns.3)) as simd_float4)) as simd_float4)
+        let c: simd_float4 = columns.0 * ((shiftLeft1(columns.1) * ((shiftLeft2(columns.2) * shiftLeft3(columns.3)) as simd_float4 - (shiftLeft3(columns.2) * shiftLeft2(columns.3)) as simd_float4)) as simd_float4 +
+                                          (shiftLeft2(columns.1) * ((shiftLeft3(columns.2) * shiftLeft1(columns.3)) as simd_float4 - (shiftLeft1(columns.2) * shiftLeft3(columns.3)) as simd_float4)) as simd_float4 +
+                                          (shiftLeft3(columns.1) * ((shiftLeft1(columns.2) * shiftLeft2(columns.3)) as simd_float4 - (shiftLeft2(columns.2) * shiftLeft1(columns.3)) as simd_float4)) as simd_float4)
         return simd_reduce_add(c.evenHalf - c.oddHalf)
     }
 
@@ -3622,8 +3622,8 @@ public struct simd_double3x3: Equatable, Sendable, CustomDebugStringConvertible 
     /// Determinant of the receiver.
     @inlinable
     public var determinant: Double {
-        simd_reduce_add(columns.0 * ((KvShiftLeft1(columns.1) * KvShiftLeft2(columns.2)) as simd_double3 -
-                                     (KvShiftLeft2(columns.1) * KvShiftLeft1(columns.2)) as simd_double3))
+        simd_reduce_add(columns.0 * ((shiftLeft1(columns.1) * shiftLeft2(columns.2)) as simd_double3 -
+                                     (shiftLeft2(columns.1) * shiftLeft1(columns.2)) as simd_double3))
     }
 
 
@@ -4730,9 +4730,9 @@ public struct simd_double4x4: Equatable, Sendable, CustomDebugStringConvertible 
     /// Determinant of the receiver.
     @inlinable
     public var determinant: Double {
-        let c: simd_double4 = columns.0 * ((KvShiftLeft1(columns.1) * ((KvShiftLeft2(columns.2) * KvShiftLeft3(columns.3)) as simd_double4 - (KvShiftLeft3(columns.2) * KvShiftLeft2(columns.3)) as simd_double4)) as simd_double4 +
-                                           (KvShiftLeft2(columns.1) * ((KvShiftLeft3(columns.2) * KvShiftLeft1(columns.3)) as simd_double4 - (KvShiftLeft1(columns.2) * KvShiftLeft3(columns.3)) as simd_double4)) as simd_double4 +
-                                           (KvShiftLeft3(columns.1) * ((KvShiftLeft1(columns.2) * KvShiftLeft2(columns.3)) as simd_double4 - (KvShiftLeft2(columns.2) * KvShiftLeft1(columns.3)) as simd_double4)) as simd_double4)
+        let c: simd_double4 = columns.0 * ((shiftLeft1(columns.1) * ((shiftLeft2(columns.2) * shiftLeft3(columns.3)) as simd_double4 - (shiftLeft3(columns.2) * shiftLeft2(columns.3)) as simd_double4)) as simd_double4 +
+                                           (shiftLeft2(columns.1) * ((shiftLeft3(columns.2) * shiftLeft1(columns.3)) as simd_double4 - (shiftLeft1(columns.2) * shiftLeft3(columns.3)) as simd_double4)) as simd_double4 +
+                                           (shiftLeft3(columns.1) * ((shiftLeft1(columns.2) * shiftLeft2(columns.3)) as simd_double4 - (shiftLeft2(columns.2) * shiftLeft1(columns.3)) as simd_double4)) as simd_double4)
         return simd_reduce_add(c.evenHalf - c.oddHalf)
     }
 

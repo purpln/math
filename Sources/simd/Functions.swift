@@ -1810,47 +1810,47 @@ public func hypot(_ x: simd_double8, _ y: simd_double8) -> simd_double8 { .init(
 /// - Returns: Elementwise `isfinite` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isfinite(_ x: simd_float2) -> simd_int2 { .init(KvMakeInt(x.x.isFinite), KvMakeInt(x.y.isFinite)) }
+public func isfinite(_ x: simd_float2) -> simd_int2 { .init(makeInt(x.x.isFinite), makeInt(x.y.isFinite)) }
 
 /// - Returns: Elementwise `isfinite` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isfinite(_ x: simd_float3) -> simd_int3 { .init(KvMakeInt(x.x.isFinite), KvMakeInt(x.y.isFinite), KvMakeInt(x.z.isFinite)) }
+public func isfinite(_ x: simd_float3) -> simd_int3 { .init(makeInt(x.x.isFinite), makeInt(x.y.isFinite), makeInt(x.z.isFinite)) }
 
 /// - Returns: Elementwise `isfinite` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isfinite(_ x: simd_float4) -> simd_int4 { .init(KvMakeInt(x.x.isFinite), KvMakeInt(x.y.isFinite), KvMakeInt(x.z.isFinite), KvMakeInt(x.w.isFinite)) }
+public func isfinite(_ x: simd_float4) -> simd_int4 { .init(makeInt(x.x.isFinite), makeInt(x.y.isFinite), makeInt(x.z.isFinite), makeInt(x.w.isFinite)) }
 
 /// - Returns: Elementwise `isfinite` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isfinite(_ x: simd_float8) -> simd_int8 { .init(KvMakeInt(x[0].isFinite), KvMakeInt(x[1].isFinite), KvMakeInt(x[2].isFinite), KvMakeInt(x[3].isFinite), KvMakeInt(x[4].isFinite), KvMakeInt(x[5].isFinite), KvMakeInt(x[6].isFinite), KvMakeInt(x[7].isFinite)) }
+public func isfinite(_ x: simd_float8) -> simd_int8 { .init(makeInt(x[0].isFinite), makeInt(x[1].isFinite), makeInt(x[2].isFinite), makeInt(x[3].isFinite), makeInt(x[4].isFinite), makeInt(x[5].isFinite), makeInt(x[6].isFinite), makeInt(x[7].isFinite)) }
 
 /// - Returns: Elementwise `isfinite` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isfinite(_ x: simd_float16) -> simd_int16 { .init(KvMakeInt(x[0].isFinite), KvMakeInt(x[1].isFinite), KvMakeInt(x[2].isFinite), KvMakeInt(x[3].isFinite), KvMakeInt(x[4].isFinite), KvMakeInt(x[5].isFinite), KvMakeInt(x[6].isFinite), KvMakeInt(x[7].isFinite), KvMakeInt(x[8].isFinite), KvMakeInt(x[9].isFinite), KvMakeInt(x[10].isFinite), KvMakeInt(x[11].isFinite), KvMakeInt(x[12].isFinite), KvMakeInt(x[13].isFinite), KvMakeInt(x[14].isFinite), KvMakeInt(x[15].isFinite)) }
+public func isfinite(_ x: simd_float16) -> simd_int16 { .init(makeInt(x[0].isFinite), makeInt(x[1].isFinite), makeInt(x[2].isFinite), makeInt(x[3].isFinite), makeInt(x[4].isFinite), makeInt(x[5].isFinite), makeInt(x[6].isFinite), makeInt(x[7].isFinite), makeInt(x[8].isFinite), makeInt(x[9].isFinite), makeInt(x[10].isFinite), makeInt(x[11].isFinite), makeInt(x[12].isFinite), makeInt(x[13].isFinite), makeInt(x[14].isFinite), makeInt(x[15].isFinite)) }
 
 /// - Returns: Elementwise `isfinite` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isfinite(_ x: simd_double2) -> simd_long2 { .init(KvMakeLong(x.x.isFinite), KvMakeLong(x.y.isFinite)) }
+public func isfinite(_ x: simd_double2) -> simd_long2 { .init(makeLong(x.x.isFinite), makeLong(x.y.isFinite)) }
 
 /// - Returns: Elementwise `isfinite` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isfinite(_ x: simd_double3) -> simd_long3 { .init(KvMakeLong(x.x.isFinite), KvMakeLong(x.y.isFinite), KvMakeLong(x.z.isFinite)) }
+public func isfinite(_ x: simd_double3) -> simd_long3 { .init(makeLong(x.x.isFinite), makeLong(x.y.isFinite), makeLong(x.z.isFinite)) }
 
 /// - Returns: Elementwise `isfinite` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isfinite(_ x: simd_double4) -> simd_long4 { .init(KvMakeLong(x.x.isFinite), KvMakeLong(x.y.isFinite), KvMakeLong(x.z.isFinite), KvMakeLong(x.w.isFinite)) }
+public func isfinite(_ x: simd_double4) -> simd_long4 { .init(makeLong(x.x.isFinite), makeLong(x.y.isFinite), makeLong(x.z.isFinite), makeLong(x.w.isFinite)) }
 
 /// - Returns: Elementwise `isfinite` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isfinite(_ x: simd_double8) -> simd_long8 { .init(KvMakeLong(x[0].isFinite), KvMakeLong(x[1].isFinite), KvMakeLong(x[2].isFinite), KvMakeLong(x[3].isFinite), KvMakeLong(x[4].isFinite), KvMakeLong(x[5].isFinite), KvMakeLong(x[6].isFinite), KvMakeLong(x[7].isFinite)) }
+public func isfinite(_ x: simd_double8) -> simd_long8 { .init(makeLong(x[0].isFinite), makeLong(x[1].isFinite), makeLong(x[2].isFinite), makeLong(x[3].isFinite), makeLong(x[4].isFinite), makeLong(x[5].isFinite), makeLong(x[6].isFinite), makeLong(x[7].isFinite)) }
 
 
 // MARK: - isinf
@@ -1858,47 +1858,47 @@ public func isfinite(_ x: simd_double8) -> simd_long8 { .init(KvMakeLong(x[0].is
 /// - Returns: Elementwise `isinf` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isinf(_ x: simd_float2) -> simd_int2 { .init(KvMakeInt(x.x.isInfinite), KvMakeInt(x.y.isInfinite)) }
+public func isinf(_ x: simd_float2) -> simd_int2 { .init(makeInt(x.x.isInfinite), makeInt(x.y.isInfinite)) }
 
 /// - Returns: Elementwise `isinf` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isinf(_ x: simd_float3) -> simd_int3 { .init(KvMakeInt(x.x.isInfinite), KvMakeInt(x.y.isInfinite), KvMakeInt(x.z.isInfinite)) }
+public func isinf(_ x: simd_float3) -> simd_int3 { .init(makeInt(x.x.isInfinite), makeInt(x.y.isInfinite), makeInt(x.z.isInfinite)) }
 
 /// - Returns: Elementwise `isinf` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isinf(_ x: simd_float4) -> simd_int4 { .init(KvMakeInt(x.x.isInfinite), KvMakeInt(x.y.isInfinite), KvMakeInt(x.z.isInfinite), KvMakeInt(x.w.isInfinite)) }
+public func isinf(_ x: simd_float4) -> simd_int4 { .init(makeInt(x.x.isInfinite), makeInt(x.y.isInfinite), makeInt(x.z.isInfinite), makeInt(x.w.isInfinite)) }
 
 /// - Returns: Elementwise `isinf` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isinf(_ x: simd_float8) -> simd_int8 { .init(KvMakeInt(x[0].isInfinite), KvMakeInt(x[1].isInfinite), KvMakeInt(x[2].isInfinite), KvMakeInt(x[3].isInfinite), KvMakeInt(x[4].isInfinite), KvMakeInt(x[5].isInfinite), KvMakeInt(x[6].isInfinite), KvMakeInt(x[7].isInfinite)) }
+public func isinf(_ x: simd_float8) -> simd_int8 { .init(makeInt(x[0].isInfinite), makeInt(x[1].isInfinite), makeInt(x[2].isInfinite), makeInt(x[3].isInfinite), makeInt(x[4].isInfinite), makeInt(x[5].isInfinite), makeInt(x[6].isInfinite), makeInt(x[7].isInfinite)) }
 
 /// - Returns: Elementwise `isinf` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isinf(_ x: simd_float16) -> simd_int16 { .init(KvMakeInt(x[0].isInfinite), KvMakeInt(x[1].isInfinite), KvMakeInt(x[2].isInfinite), KvMakeInt(x[3].isInfinite), KvMakeInt(x[4].isInfinite), KvMakeInt(x[5].isInfinite), KvMakeInt(x[6].isInfinite), KvMakeInt(x[7].isInfinite), KvMakeInt(x[8].isInfinite), KvMakeInt(x[9].isInfinite), KvMakeInt(x[10].isInfinite), KvMakeInt(x[11].isInfinite), KvMakeInt(x[12].isInfinite), KvMakeInt(x[13].isInfinite), KvMakeInt(x[14].isInfinite), KvMakeInt(x[15].isInfinite)) }
+public func isinf(_ x: simd_float16) -> simd_int16 { .init(makeInt(x[0].isInfinite), makeInt(x[1].isInfinite), makeInt(x[2].isInfinite), makeInt(x[3].isInfinite), makeInt(x[4].isInfinite), makeInt(x[5].isInfinite), makeInt(x[6].isInfinite), makeInt(x[7].isInfinite), makeInt(x[8].isInfinite), makeInt(x[9].isInfinite), makeInt(x[10].isInfinite), makeInt(x[11].isInfinite), makeInt(x[12].isInfinite), makeInt(x[13].isInfinite), makeInt(x[14].isInfinite), makeInt(x[15].isInfinite)) }
 
 /// - Returns: Elementwise `isinf` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isinf(_ x: simd_double2) -> simd_long2 { .init(KvMakeLong(x.x.isInfinite), KvMakeLong(x.y.isInfinite)) }
+public func isinf(_ x: simd_double2) -> simd_long2 { .init(makeLong(x.x.isInfinite), makeLong(x.y.isInfinite)) }
 
 /// - Returns: Elementwise `isinf` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isinf(_ x: simd_double3) -> simd_long3 { .init(KvMakeLong(x.x.isInfinite), KvMakeLong(x.y.isInfinite), KvMakeLong(x.z.isInfinite)) }
+public func isinf(_ x: simd_double3) -> simd_long3 { .init(makeLong(x.x.isInfinite), makeLong(x.y.isInfinite), makeLong(x.z.isInfinite)) }
 
 /// - Returns: Elementwise `isinf` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isinf(_ x: simd_double4) -> simd_long4 { .init(KvMakeLong(x.x.isInfinite), KvMakeLong(x.y.isInfinite), KvMakeLong(x.z.isInfinite), KvMakeLong(x.w.isInfinite)) }
+public func isinf(_ x: simd_double4) -> simd_long4 { .init(makeLong(x.x.isInfinite), makeLong(x.y.isInfinite), makeLong(x.z.isInfinite), makeLong(x.w.isInfinite)) }
 
 /// - Returns: Elementwise `isinf` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isinf(_ x: simd_double8) -> simd_long8 { .init(KvMakeLong(x[0].isInfinite), KvMakeLong(x[1].isInfinite), KvMakeLong(x[2].isInfinite), KvMakeLong(x[3].isInfinite), KvMakeLong(x[4].isInfinite), KvMakeLong(x[5].isInfinite), KvMakeLong(x[6].isInfinite), KvMakeLong(x[7].isInfinite)) }
+public func isinf(_ x: simd_double8) -> simd_long8 { .init(makeLong(x[0].isInfinite), makeLong(x[1].isInfinite), makeLong(x[2].isInfinite), makeLong(x[3].isInfinite), makeLong(x[4].isInfinite), makeLong(x[5].isInfinite), makeLong(x[6].isInfinite), makeLong(x[7].isInfinite)) }
 
 
 // MARK: - isnan
@@ -1906,47 +1906,47 @@ public func isinf(_ x: simd_double8) -> simd_long8 { .init(KvMakeLong(x[0].isInf
 /// - Returns: Elementwise `isnan` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnan(_ x: simd_float2) -> simd_int2 { .init(KvMakeInt(x.x.isNaN), KvMakeInt(x.y.isNaN)) }
+public func isnan(_ x: simd_float2) -> simd_int2 { .init(makeInt(x.x.isNaN), makeInt(x.y.isNaN)) }
 
 /// - Returns: Elementwise `isnan` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnan(_ x: simd_float3) -> simd_int3 { .init(KvMakeInt(x.x.isNaN), KvMakeInt(x.y.isNaN), KvMakeInt(x.z.isNaN)) }
+public func isnan(_ x: simd_float3) -> simd_int3 { .init(makeInt(x.x.isNaN), makeInt(x.y.isNaN), makeInt(x.z.isNaN)) }
 
 /// - Returns: Elementwise `isnan` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnan(_ x: simd_float4) -> simd_int4 { .init(KvMakeInt(x.x.isNaN), KvMakeInt(x.y.isNaN), KvMakeInt(x.z.isNaN), KvMakeInt(x.w.isNaN)) }
+public func isnan(_ x: simd_float4) -> simd_int4 { .init(makeInt(x.x.isNaN), makeInt(x.y.isNaN), makeInt(x.z.isNaN), makeInt(x.w.isNaN)) }
 
 /// - Returns: Elementwise `isnan` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnan(_ x: simd_float8) -> simd_int8 { .init(KvMakeInt(x[0].isNaN), KvMakeInt(x[1].isNaN), KvMakeInt(x[2].isNaN), KvMakeInt(x[3].isNaN), KvMakeInt(x[4].isNaN), KvMakeInt(x[5].isNaN), KvMakeInt(x[6].isNaN), KvMakeInt(x[7].isNaN)) }
+public func isnan(_ x: simd_float8) -> simd_int8 { .init(makeInt(x[0].isNaN), makeInt(x[1].isNaN), makeInt(x[2].isNaN), makeInt(x[3].isNaN), makeInt(x[4].isNaN), makeInt(x[5].isNaN), makeInt(x[6].isNaN), makeInt(x[7].isNaN)) }
 
 /// - Returns: Elementwise `isnan` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnan(_ x: simd_float16) -> simd_int16 { .init(KvMakeInt(x[0].isNaN), KvMakeInt(x[1].isNaN), KvMakeInt(x[2].isNaN), KvMakeInt(x[3].isNaN), KvMakeInt(x[4].isNaN), KvMakeInt(x[5].isNaN), KvMakeInt(x[6].isNaN), KvMakeInt(x[7].isNaN), KvMakeInt(x[8].isNaN), KvMakeInt(x[9].isNaN), KvMakeInt(x[10].isNaN), KvMakeInt(x[11].isNaN), KvMakeInt(x[12].isNaN), KvMakeInt(x[13].isNaN), KvMakeInt(x[14].isNaN), KvMakeInt(x[15].isNaN)) }
+public func isnan(_ x: simd_float16) -> simd_int16 { .init(makeInt(x[0].isNaN), makeInt(x[1].isNaN), makeInt(x[2].isNaN), makeInt(x[3].isNaN), makeInt(x[4].isNaN), makeInt(x[5].isNaN), makeInt(x[6].isNaN), makeInt(x[7].isNaN), makeInt(x[8].isNaN), makeInt(x[9].isNaN), makeInt(x[10].isNaN), makeInt(x[11].isNaN), makeInt(x[12].isNaN), makeInt(x[13].isNaN), makeInt(x[14].isNaN), makeInt(x[15].isNaN)) }
 
 /// - Returns: Elementwise `isnan` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnan(_ x: simd_double2) -> simd_long2 { .init(KvMakeLong(x.x.isNaN), KvMakeLong(x.y.isNaN)) }
+public func isnan(_ x: simd_double2) -> simd_long2 { .init(makeLong(x.x.isNaN), makeLong(x.y.isNaN)) }
 
 /// - Returns: Elementwise `isnan` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnan(_ x: simd_double3) -> simd_long3 { .init(KvMakeLong(x.x.isNaN), KvMakeLong(x.y.isNaN), KvMakeLong(x.z.isNaN)) }
+public func isnan(_ x: simd_double3) -> simd_long3 { .init(makeLong(x.x.isNaN), makeLong(x.y.isNaN), makeLong(x.z.isNaN)) }
 
 /// - Returns: Elementwise `isnan` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnan(_ x: simd_double4) -> simd_long4 { .init(KvMakeLong(x.x.isNaN), KvMakeLong(x.y.isNaN), KvMakeLong(x.z.isNaN), KvMakeLong(x.w.isNaN)) }
+public func isnan(_ x: simd_double4) -> simd_long4 { .init(makeLong(x.x.isNaN), makeLong(x.y.isNaN), makeLong(x.z.isNaN), makeLong(x.w.isNaN)) }
 
 /// - Returns: Elementwise `isnan` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnan(_ x: simd_double8) -> simd_long8 { .init(KvMakeLong(x[0].isNaN), KvMakeLong(x[1].isNaN), KvMakeLong(x[2].isNaN), KvMakeLong(x[3].isNaN), KvMakeLong(x[4].isNaN), KvMakeLong(x[5].isNaN), KvMakeLong(x[6].isNaN), KvMakeLong(x[7].isNaN)) }
+public func isnan(_ x: simd_double8) -> simd_long8 { .init(makeLong(x[0].isNaN), makeLong(x[1].isNaN), makeLong(x[2].isNaN), makeLong(x[3].isNaN), makeLong(x[4].isNaN), makeLong(x[5].isNaN), makeLong(x[6].isNaN), makeLong(x[7].isNaN)) }
 
 
 // MARK: - isnormal
@@ -1954,47 +1954,47 @@ public func isnan(_ x: simd_double8) -> simd_long8 { .init(KvMakeLong(x[0].isNaN
 /// - Returns: Elementwise `isnormal` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnormal(_ x: simd_float2) -> simd_int2 { .init(KvMakeInt(x.x.isNormal), KvMakeInt(x.y.isNormal)) }
+public func isnormal(_ x: simd_float2) -> simd_int2 { .init(makeInt(x.x.isNormal), makeInt(x.y.isNormal)) }
 
 /// - Returns: Elementwise `isnormal` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnormal(_ x: simd_float3) -> simd_int3 { .init(KvMakeInt(x.x.isNormal), KvMakeInt(x.y.isNormal), KvMakeInt(x.z.isNormal)) }
+public func isnormal(_ x: simd_float3) -> simd_int3 { .init(makeInt(x.x.isNormal), makeInt(x.y.isNormal), makeInt(x.z.isNormal)) }
 
 /// - Returns: Elementwise `isnormal` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnormal(_ x: simd_float4) -> simd_int4 { .init(KvMakeInt(x.x.isNormal), KvMakeInt(x.y.isNormal), KvMakeInt(x.z.isNormal), KvMakeInt(x.w.isNormal)) }
+public func isnormal(_ x: simd_float4) -> simd_int4 { .init(makeInt(x.x.isNormal), makeInt(x.y.isNormal), makeInt(x.z.isNormal), makeInt(x.w.isNormal)) }
 
 /// - Returns: Elementwise `isnormal` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnormal(_ x: simd_float8) -> simd_int8 { .init(KvMakeInt(x[0].isNormal), KvMakeInt(x[1].isNormal), KvMakeInt(x[2].isNormal), KvMakeInt(x[3].isNormal), KvMakeInt(x[4].isNormal), KvMakeInt(x[5].isNormal), KvMakeInt(x[6].isNormal), KvMakeInt(x[7].isNormal)) }
+public func isnormal(_ x: simd_float8) -> simd_int8 { .init(makeInt(x[0].isNormal), makeInt(x[1].isNormal), makeInt(x[2].isNormal), makeInt(x[3].isNormal), makeInt(x[4].isNormal), makeInt(x[5].isNormal), makeInt(x[6].isNormal), makeInt(x[7].isNormal)) }
 
 /// - Returns: Elementwise `isnormal` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnormal(_ x: simd_float16) -> simd_int16 { .init(KvMakeInt(x[0].isNormal), KvMakeInt(x[1].isNormal), KvMakeInt(x[2].isNormal), KvMakeInt(x[3].isNormal), KvMakeInt(x[4].isNormal), KvMakeInt(x[5].isNormal), KvMakeInt(x[6].isNormal), KvMakeInt(x[7].isNormal), KvMakeInt(x[8].isNormal), KvMakeInt(x[9].isNormal), KvMakeInt(x[10].isNormal), KvMakeInt(x[11].isNormal), KvMakeInt(x[12].isNormal), KvMakeInt(x[13].isNormal), KvMakeInt(x[14].isNormal), KvMakeInt(x[15].isNormal)) }
+public func isnormal(_ x: simd_float16) -> simd_int16 { .init(makeInt(x[0].isNormal), makeInt(x[1].isNormal), makeInt(x[2].isNormal), makeInt(x[3].isNormal), makeInt(x[4].isNormal), makeInt(x[5].isNormal), makeInt(x[6].isNormal), makeInt(x[7].isNormal), makeInt(x[8].isNormal), makeInt(x[9].isNormal), makeInt(x[10].isNormal), makeInt(x[11].isNormal), makeInt(x[12].isNormal), makeInt(x[13].isNormal), makeInt(x[14].isNormal), makeInt(x[15].isNormal)) }
 
 /// - Returns: Elementwise `isnormal` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnormal(_ x: simd_double2) -> simd_long2 { .init(KvMakeLong(x.x.isNormal), KvMakeLong(x.y.isNormal)) }
+public func isnormal(_ x: simd_double2) -> simd_long2 { .init(makeLong(x.x.isNormal), makeLong(x.y.isNormal)) }
 
 /// - Returns: Elementwise `isnormal` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnormal(_ x: simd_double3) -> simd_long3 { .init(KvMakeLong(x.x.isNormal), KvMakeLong(x.y.isNormal), KvMakeLong(x.z.isNormal)) }
+public func isnormal(_ x: simd_double3) -> simd_long3 { .init(makeLong(x.x.isNormal), makeLong(x.y.isNormal), makeLong(x.z.isNormal)) }
 
 /// - Returns: Elementwise `isnormal` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnormal(_ x: simd_double4) -> simd_long4 { .init(KvMakeLong(x.x.isNormal), KvMakeLong(x.y.isNormal), KvMakeLong(x.z.isNormal), KvMakeLong(x.w.isNormal)) }
+public func isnormal(_ x: simd_double4) -> simd_long4 { .init(makeLong(x.x.isNormal), makeLong(x.y.isNormal), makeLong(x.z.isNormal), makeLong(x.w.isNormal)) }
 
 /// - Returns: Elementwise `isnormal` of *x*.
 @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
 @inlinable
-public func isnormal(_ x: simd_double8) -> simd_long8 { .init(KvMakeLong(x[0].isNormal), KvMakeLong(x[1].isNormal), KvMakeLong(x[2].isNormal), KvMakeLong(x[3].isNormal), KvMakeLong(x[4].isNormal), KvMakeLong(x[5].isNormal), KvMakeLong(x[6].isNormal), KvMakeLong(x[7].isNormal)) }
+public func isnormal(_ x: simd_double8) -> simd_long8 { .init(makeLong(x[0].isNormal), makeLong(x[1].isNormal), makeLong(x[2].isNormal), makeLong(x[3].isNormal), makeLong(x[4].isNormal), makeLong(x[5].isNormal), makeLong(x[6].isNormal), makeLong(x[7].isNormal)) }
 
 
 // MARK: - length
@@ -5498,8 +5498,8 @@ public func simd_determinant(_ x: simd_double4x4) -> Double { x.determinant }
 
 /// - Returns: Distance between *x* and *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_distance(_:_:)-5u1ww`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_distance(_:_:)-7ime1`` is called.
+/// - Note: This function calls ``simd/simd_fast_distance(_:_:)-5u1ww`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_distance(_:_:)-7ime1`` is called.
 @inlinable
 public func simd_distance(_ x: simd_float2, _ y: simd_float2) -> Float {
 #if __FAST_MATH__
@@ -5511,8 +5511,8 @@ public func simd_distance(_ x: simd_float2, _ y: simd_float2) -> Float {
 
 /// - Returns: Distance between *x* and *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_distance(_:_:)-76kmx`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_distance(_:_:)-4new8`` is called.
+/// - Note: This function calls ``simd/simd_fast_distance(_:_:)-76kmx`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_distance(_:_:)-4new8`` is called.
 @inlinable
 public func simd_distance(_ x: simd_float3, _ y: simd_float3) -> Float {
 #if __FAST_MATH__
@@ -5524,8 +5524,8 @@ public func simd_distance(_ x: simd_float3, _ y: simd_float3) -> Float {
 
 /// - Returns: Distance between *x* and *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_distance(_:_:)-2frg6`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_distance(_:_:)-4i1qq`` is called.
+/// - Note: This function calls ``simd/simd_fast_distance(_:_:)-2frg6`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_distance(_:_:)-4i1qq`` is called.
 @inlinable
 public func simd_distance(_ x: simd_float4, _ y: simd_float4) -> Float {
 #if __FAST_MATH__
@@ -5537,8 +5537,8 @@ public func simd_distance(_ x: simd_float4, _ y: simd_float4) -> Float {
 
 /// - Returns: Distance between *x* and *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_distance(_:_:)-3qxn0`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_distance(_:_:)-47owe`` is called.
+/// - Note: This function calls ``simd/simd_fast_distance(_:_:)-3qxn0`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_distance(_:_:)-47owe`` is called.
 @inlinable
 public func simd_distance(_ x: simd_float8, _ y: simd_float8) -> Float {
 #if __FAST_MATH__
@@ -5550,8 +5550,8 @@ public func simd_distance(_ x: simd_float8, _ y: simd_float8) -> Float {
 
 /// - Returns: Distance between *x* and *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_distance(_:_:)-3vx1d`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_distance(_:_:)-93rmz`` is called.
+/// - Note: This function calls ``simd/simd_fast_distance(_:_:)-3vx1d`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_distance(_:_:)-93rmz`` is called.
 @inlinable
 public func simd_distance(_ x: simd_float16, _ y: simd_float16) -> Float {
 #if __FAST_MATH__
@@ -5563,8 +5563,8 @@ public func simd_distance(_ x: simd_float16, _ y: simd_float16) -> Float {
 
 /// - Returns: Distance between *x* and *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_distance(_:_:)-398nd`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_distance(_:_:)-2k8il`` is called.
+/// - Note: This function calls ``simd/simd_fast_distance(_:_:)-398nd`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_distance(_:_:)-2k8il`` is called.
 @inlinable
 public func simd_distance(_ x: simd_double2, _ y: simd_double2) -> Double {
 #if __FAST_MATH__
@@ -5576,8 +5576,8 @@ public func simd_distance(_ x: simd_double2, _ y: simd_double2) -> Double {
 
 /// - Returns: Distance between *x* and *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_distance(_:_:)-8k7d3`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_distance(_:_:)-47gkv`` is called.
+/// - Note: This function calls ``simd/simd_fast_distance(_:_:)-8k7d3`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_distance(_:_:)-47gkv`` is called.
 @inlinable
 public func simd_distance(_ x: simd_double3, _ y: simd_double3) -> Double {
 #if __FAST_MATH__
@@ -5589,8 +5589,8 @@ public func simd_distance(_ x: simd_double3, _ y: simd_double3) -> Double {
 
 /// - Returns: Distance between *x* and *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_distance(_:_:)-91tcr`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_distance(_:_:)-2sxe1`` is called.
+/// - Note: This function calls ``simd/simd_fast_distance(_:_:)-91tcr`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_distance(_:_:)-2sxe1`` is called.
 @inlinable
 public func simd_distance(_ x: simd_double4, _ y: simd_double4) -> Double {
 #if __FAST_MATH__
@@ -5602,8 +5602,8 @@ public func simd_distance(_ x: simd_double4, _ y: simd_double4) -> Double {
 
 /// - Returns: Distance between *x* and *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_distance(_:_:)-6aaoc`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_distance(_:_:)-963og`` is called.
+/// - Note: This function calls ``simd/simd_fast_distance(_:_:)-6aaoc`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_distance(_:_:)-963og`` is called.
 @inlinable
 public func simd_distance(_ x: simd_double8, _ y: simd_double8) -> Double {
 #if __FAST_MATH__
@@ -6494,8 +6494,8 @@ public func simd_inverse(_ x: simd_double4x4) -> simd_double4x4 { x.inverse }
 
 /// - Returns: Length of *x* (sqrt(dot(x, x))).
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_length(_:)-4e1qb`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_length(_:)-4o088`` is called.
+/// - Note: This function calls ``simd/simd_fast_length(_:)-4e1qb`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_length(_:)-4o088`` is called.
 @inlinable
 public func simd_length(_ x: simd_float2) -> Float {
 #if __FAST_MATH__
@@ -6507,8 +6507,8 @@ public func simd_length(_ x: simd_float2) -> Float {
 
 /// - Returns: Length of *x* (sqrt(dot(x, x))).
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_length(_:)-9gf5r`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_length(_:)-1u16l`` is called.
+/// - Note: This function calls ``simd/simd_fast_length(_:)-9gf5r`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_length(_:)-1u16l`` is called.
 @inlinable
 public func simd_length(_ x: simd_float3) -> Float {
 #if __FAST_MATH__
@@ -6520,8 +6520,8 @@ public func simd_length(_ x: simd_float3) -> Float {
 
 /// - Returns: Length of *x* (sqrt(dot(x, x))).
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_length(_:)-1cxu3`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_length(_:)-2tk1x`` is called.
+/// - Note: This function calls ``simd/simd_fast_length(_:)-1cxu3`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_length(_:)-2tk1x`` is called.
 @inlinable
 public func simd_length(_ x: simd_float4) -> Float {
 #if __FAST_MATH__
@@ -6533,8 +6533,8 @@ public func simd_length(_ x: simd_float4) -> Float {
 
 /// - Returns: Length of *x* (sqrt(dot(x, x))).
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_length(_:)-6wmgh`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_length(_:)-2g5nl`` is called.
+/// - Note: This function calls ``simd/simd_fast_length(_:)-6wmgh`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_length(_:)-2g5nl`` is called.
 @inlinable
 public func simd_length(_ x: simd_float8) -> Float {
 #if __FAST_MATH__
@@ -6546,8 +6546,8 @@ public func simd_length(_ x: simd_float8) -> Float {
 
 /// - Returns: Length of *x* (sqrt(dot(x, x))).
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_length(_:)-8d1c1`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_length(_:)-8xhtb`` is called.
+/// - Note: This function calls ``simd/simd_fast_length(_:)-8d1c1`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_length(_:)-8xhtb`` is called.
 @inlinable
 public func simd_length(_ x: simd_float16) -> Float {
 #if __FAST_MATH__
@@ -6559,8 +6559,8 @@ public func simd_length(_ x: simd_float16) -> Float {
 
 /// - Returns: Length of *x* (sqrt(dot(x, x))).
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_length(_:)-742h2`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_length(_:)-1yor6`` is called.
+/// - Note: This function calls ``simd/simd_fast_length(_:)-742h2`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_length(_:)-1yor6`` is called.
 @inlinable
 public func simd_length(_ x: simd_double2) -> Double {
 #if __FAST_MATH__
@@ -6572,8 +6572,8 @@ public func simd_length(_ x: simd_double2) -> Double {
 
 /// - Returns: Length of *x* (sqrt(dot(x, x))).
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_length(_:)-3irhy`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_length(_:)-9qpyq`` is called.
+/// - Note: This function calls ``simd/simd_fast_length(_:)-3irhy`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_length(_:)-9qpyq`` is called.
 @inlinable
 public func simd_length(_ x: simd_double3) -> Double {
 #if __FAST_MATH__
@@ -6585,8 +6585,8 @@ public func simd_length(_ x: simd_double3) -> Double {
 
 /// - Returns: Length of *x* (sqrt(dot(x, x))).
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_length(_:)-7x6xm`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_length(_:)-1z7jj`` is called.
+/// - Note: This function calls ``simd/simd_fast_length(_:)-7x6xm`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_length(_:)-1z7jj`` is called.
 @inlinable
 public func simd_length(_ x: simd_double4) -> Double {
 #if __FAST_MATH__
@@ -6598,8 +6598,8 @@ public func simd_length(_ x: simd_double4) -> Double {
 
 /// - Returns: Length of *x* (sqrt(dot(x, x))).
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_length(_:)-ab2q`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_length(_:)-6jepf`` is called.
+/// - Note: This function calls ``simd/simd_fast_length(_:)-ab2q`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_length(_:)-6jepf`` is called.
 @inlinable
 public func simd_length(_ x: simd_double8) -> Double {
 #if __FAST_MATH__
@@ -8301,8 +8301,8 @@ public func simd_norm_one(_ x: simd_double8) -> Double { simd_abs(x).sum() }
 
 /// - Returns: Unit vector having the same direction as *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_normalize(_:)-2hkch`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_normalize(_:)-450xe`` is called.
+/// - Note: This function calls ``simd/simd_fast_normalize(_:)-2hkch`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_normalize(_:)-450xe`` is called.
 @inlinable
 public func simd_normalize(_ x: simd_float2) -> simd_float2 {
 #if __FAST_MATH__
@@ -8314,8 +8314,8 @@ public func simd_normalize(_ x: simd_float2) -> simd_float2 {
 
 /// - Returns: Unit vector having the same direction as *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_normalize(_:)-462ix`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_normalize(_:)-63h0a`` is called.
+/// - Note: This function calls ``simd/simd_fast_normalize(_:)-462ix`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_normalize(_:)-63h0a`` is called.
 @inlinable
 public func simd_normalize(_ x: simd_float3) -> simd_float3 {
 #if __FAST_MATH__
@@ -8327,8 +8327,8 @@ public func simd_normalize(_ x: simd_float3) -> simd_float3 {
 
 /// - Returns: Unit vector having the same direction as *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_normalize(_:)-3pjfw`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_normalize(_:)-91ful`` is called.
+/// - Note: This function calls ``simd/simd_fast_normalize(_:)-3pjfw`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_normalize(_:)-91ful`` is called.
 @inlinable
 public func simd_normalize(_ x: simd_float4) -> simd_float4 {
 #if __FAST_MATH__
@@ -8340,8 +8340,8 @@ public func simd_normalize(_ x: simd_float4) -> simd_float4 {
 
 /// - Returns: Unit vector having the same direction as *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_normalize(_:)-7po43`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_normalize(_:)-256l1`` is called.
+/// - Note: This function calls ``simd/simd_fast_normalize(_:)-7po43`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_normalize(_:)-256l1`` is called.
 @inlinable
 public func simd_normalize(_ x: simd_float8) -> simd_float8 {
 #if __FAST_MATH__
@@ -8353,8 +8353,8 @@ public func simd_normalize(_ x: simd_float8) -> simd_float8 {
 
 /// - Returns: Unit vector having the same direction as *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_normalize(_:)-5vjkd`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_normalize(_:)-94lo5`` is called.
+/// - Note: This function calls ``simd/simd_fast_normalize(_:)-5vjkd`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_normalize(_:)-94lo5`` is called.
 @inlinable
 public func simd_normalize(_ x: simd_float16) -> simd_float16 {
 #if __FAST_MATH__
@@ -8366,8 +8366,8 @@ public func simd_normalize(_ x: simd_float16) -> simd_float16 {
 
 /// - Returns: Unit vector having the same direction as *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_normalize(_:)-9i6pv`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_normalize(_:)-42ll`` is called.
+/// - Note: This function calls ``simd/simd_fast_normalize(_:)-9i6pv`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_normalize(_:)-42ll`` is called.
 @inlinable
 public func simd_normalize(_ x: simd_double2) -> simd_double2 {
 #if __FAST_MATH__
@@ -8379,8 +8379,8 @@ public func simd_normalize(_ x: simd_double2) -> simd_double2 {
 
 /// - Returns: Unit vector having the same direction as *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_normalize(_:)-86via`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_normalize(_:)-1f19m`` is called.
+/// - Note: This function calls ``simd/simd_fast_normalize(_:)-86via`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_normalize(_:)-1f19m`` is called.
 @inlinable
 public func simd_normalize(_ x: simd_double3) -> simd_double3 {
 #if __FAST_MATH__
@@ -8392,8 +8392,8 @@ public func simd_normalize(_ x: simd_double3) -> simd_double3 {
 
 /// - Returns: Unit vector having the same direction as *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_normalize(_:)-6qpwv`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_normalize(_:)-otg6`` is called.
+/// - Note: This function calls ``simd/simd_fast_normalize(_:)-6qpwv`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_normalize(_:)-otg6`` is called.
 @inlinable
 public func simd_normalize(_ x: simd_double4) -> simd_double4 {
 #if __FAST_MATH__
@@ -8405,8 +8405,8 @@ public func simd_normalize(_ x: simd_double4) -> simd_double4 {
 
 /// - Returns: Unit vector having the same direction as *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_normalize(_:)-6j5n4`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_normalize(_:)-6pk2u`` is called.
+/// - Note: This function calls ``simd/simd_fast_normalize(_:)-6j5n4`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_normalize(_:)-6pk2u`` is called.
 @inlinable
 public func simd_normalize(_ x: simd_double8) -> simd_double8 {
 #if __FAST_MATH__
@@ -8716,8 +8716,8 @@ public func simd_precise_rsqrt(_ x: simd_double8) -> simd_double8 { simd_double8
 
 /// - Returns: Projection of *x* onto *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_project(_:_:)-44zkl`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_project(_:_:)-9madg`` is called.
+/// - Note: This function calls ``simd/simd_fast_project(_:_:)-44zkl`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_project(_:_:)-9madg`` is called.
 @inlinable
 public func simd_project(_ x: simd_float2, _ y: simd_float2) -> simd_float2 {
 #if __FAST_MATH__
@@ -8729,8 +8729,8 @@ public func simd_project(_ x: simd_float2, _ y: simd_float2) -> simd_float2 {
 
 /// - Returns: Projection of *x* onto *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_project(_:_:)-7mhfl`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_project(_:_:)-6k0tf`` is called.
+/// - Note: This function calls ``simd/simd_fast_project(_:_:)-7mhfl`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_project(_:_:)-6k0tf`` is called.
 @inlinable
 public func simd_project(_ x: simd_float3, _ y: simd_float3) -> simd_float3 {
 #if __FAST_MATH__
@@ -8742,8 +8742,8 @@ public func simd_project(_ x: simd_float3, _ y: simd_float3) -> simd_float3 {
 
 /// - Returns: Projection of *x* onto *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_project(_:_:)-417py`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_project(_:_:)-1zt0s`` is called.
+/// - Note: This function calls ``simd/simd_fast_project(_:_:)-417py`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_project(_:_:)-1zt0s`` is called.
 @inlinable
 public func simd_project(_ x: simd_float4, _ y: simd_float4) -> simd_float4 {
 #if __FAST_MATH__
@@ -8755,8 +8755,8 @@ public func simd_project(_ x: simd_float4, _ y: simd_float4) -> simd_float4 {
 
 /// - Returns: Projection of *x* onto *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_project(_:_:)-93twq`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_project(_:_:)-4sb7j`` is called.
+/// - Note: This function calls ``simd/simd_fast_project(_:_:)-93twq`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_project(_:_:)-4sb7j`` is called.
 @inlinable
 public func simd_project(_ x: simd_float8, _ y: simd_float8) -> simd_float8 {
 #if __FAST_MATH__
@@ -8768,8 +8768,8 @@ public func simd_project(_ x: simd_float8, _ y: simd_float8) -> simd_float8 {
 
 /// - Returns: Projection of *x* onto *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_project(_:_:)-7xjnp`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_project(_:_:)-4g6cq`` is called.
+/// - Note: This function calls ``simd/simd_fast_project(_:_:)-7xjnp`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_project(_:_:)-4g6cq`` is called.
 @inlinable
 public func simd_project(_ x: simd_float16, _ y: simd_float16) -> simd_float16 {
 #if __FAST_MATH__
@@ -8781,8 +8781,8 @@ public func simd_project(_ x: simd_float16, _ y: simd_float16) -> simd_float16 {
 
 /// - Returns: Projection of *x* onto *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_project(_:_:)-74ai6`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_project(_:_:)-4upsr`` is called.
+/// - Note: This function calls ``simd/simd_fast_project(_:_:)-74ai6`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_project(_:_:)-4upsr`` is called.
 @inlinable
 public func simd_project(_ x: simd_double2, _ y: simd_double2) -> simd_double2 {
 #if __FAST_MATH__
@@ -8794,8 +8794,8 @@ public func simd_project(_ x: simd_double2, _ y: simd_double2) -> simd_double2 {
 
 /// - Returns: Projection of *x* onto *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_project(_:_:)-25sjz`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_project(_:_:)-3h95q`` is called.
+/// - Note: This function calls ``simd/simd_fast_project(_:_:)-25sjz`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_project(_:_:)-3h95q`` is called.
 @inlinable
 public func simd_project(_ x: simd_double3, _ y: simd_double3) -> simd_double3 {
 #if __FAST_MATH__
@@ -8807,8 +8807,8 @@ public func simd_project(_ x: simd_double3, _ y: simd_double3) -> simd_double3 {
 
 /// - Returns: Projection of *x* onto *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_project(_:_:)-9i7qn`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_project(_:_:)-3eg9n`` is called.
+/// - Note: This function calls ``simd/simd_fast_project(_:_:)-9i7qn`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_project(_:_:)-3eg9n`` is called.
 @inlinable
 public func simd_project(_ x: simd_double4, _ y: simd_double4) -> simd_double4 {
 #if __FAST_MATH__
@@ -8820,8 +8820,8 @@ public func simd_project(_ x: simd_double4, _ y: simd_double4) -> simd_double4 {
 
 /// - Returns: Projection of *x* onto *y*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_project(_:_:)-6wlsr`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_project(_:_:)-6dka9`` is called.
+/// - Note: This function calls ``simd/simd_fast_project(_:_:)-6wlsr`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_project(_:_:)-6dka9`` is called.
 @inlinable
 public func simd_project(_ x: simd_double8, _ y: simd_double8) -> simd_double8 {
 #if __FAST_MATH__
@@ -8847,8 +8847,8 @@ public func simd_real(_ q: simd_quatd) -> Double { q.real }
 
 /// - Returns: Reciprocial of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_recip(_:)-4faum`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_recip(_:)-vcxm`` is called.
+/// - Note: This function calls ``simd/simd_fast_recip(_:)-4faum`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_recip(_:)-vcxm`` is called.
 @inlinable
 public func simd_recip(_ x: Float) -> Float {
 #if __FAST_MATH__
@@ -8860,8 +8860,8 @@ public func simd_recip(_ x: Float) -> Float {
 
 /// - Returns: Elementwise reciprocial of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_recip(_:)-86tc5`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_recip(_:)-2qlsg`` is called.
+/// - Note: This function calls ``simd/simd_fast_recip(_:)-86tc5`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_recip(_:)-2qlsg`` is called.
 @inlinable
 public func simd_recip(_ x: simd_float2) -> simd_float2 {
 #if __FAST_MATH__
@@ -8873,8 +8873,8 @@ public func simd_recip(_ x: simd_float2) -> simd_float2 {
 
 /// - Returns: Elementwise reciprocial of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_recip(_:)-8irlt`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_recip(_:)-4f3um`` is called.
+/// - Note: This function calls ``simd/simd_fast_recip(_:)-8irlt`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_recip(_:)-4f3um`` is called.
 @inlinable
 public func simd_recip(_ x: simd_float3) -> simd_float3 {
 #if __FAST_MATH__
@@ -8886,8 +8886,8 @@ public func simd_recip(_ x: simd_float3) -> simd_float3 {
 
 /// - Returns: Elementwise reciprocial of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_recip(_:)-40l40`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_recip(_:)-7dzdh`` is called.
+/// - Note: This function calls ``simd/simd_fast_recip(_:)-40l40`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_recip(_:)-7dzdh`` is called.
 @inlinable
 public func simd_recip(_ x: simd_float4) -> simd_float4 {
 #if __FAST_MATH__
@@ -8899,8 +8899,8 @@ public func simd_recip(_ x: simd_float4) -> simd_float4 {
 
 /// - Returns: Elementwise reciprocial of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_recip(_:)-tb79`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_recip(_:)-5tjz0`` is called.
+/// - Note: This function calls ``simd/simd_fast_recip(_:)-tb79`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_recip(_:)-5tjz0`` is called.
 @inlinable
 public func simd_recip(_ x: simd_float8) -> simd_float8 {
 #if __FAST_MATH__
@@ -8912,8 +8912,8 @@ public func simd_recip(_ x: simd_float8) -> simd_float8 {
 
 /// - Returns: Elementwise reciprocial of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_recip(_:)-3wcuq`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_recip(_:)-8bop8`` is called.
+/// - Note: This function calls ``simd/simd_fast_recip(_:)-3wcuq`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_recip(_:)-8bop8`` is called.
 @inlinable
 public func simd_recip(_ x: simd_float16) -> simd_float16 {
 #if __FAST_MATH__
@@ -8925,8 +8925,8 @@ public func simd_recip(_ x: simd_float16) -> simd_float16 {
 
 /// - Returns: Reciprocial of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_recip(_:)-4fa82`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_recip(_:)-vcg6`` is called.
+/// - Note: This function calls ``simd/simd_fast_recip(_:)-4fa82`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_recip(_:)-vcg6`` is called.
 @inlinable
 public func simd_recip(_ x: Double) -> Double {
 #if __FAST_MATH__
@@ -8938,8 +8938,8 @@ public func simd_recip(_ x: Double) -> Double {
 
 /// - Returns: Elementwise reciprocial of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_recip(_:)-56qme`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_recip(_:)-vl3b`` is called.
+/// - Note: This function calls ``simd/simd_fast_recip(_:)-56qme`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_recip(_:)-vl3b`` is called.
 @inlinable
 public func simd_recip(_ x: simd_double2) -> simd_double2 {
 #if __FAST_MATH__
@@ -8951,8 +8951,8 @@ public func simd_recip(_ x: simd_double2) -> simd_double2 {
 
 /// - Returns: Elementwise reciprocial of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_recip(_:)-8zfnr`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_recip(_:)-2k0tr`` is called.
+/// - Note: This function calls ``simd/simd_fast_recip(_:)-8zfnr`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_recip(_:)-2k0tr`` is called.
 @inlinable
 public func simd_recip(_ x: simd_double3) -> simd_double3 {
 #if __FAST_MATH__
@@ -8964,8 +8964,8 @@ public func simd_recip(_ x: simd_double3) -> simd_double3 {
 
 /// - Returns: Elementwise reciprocial of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_recip(_:)-1wyh`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_recip(_:)-3e7j2`` is called.
+/// - Note: This function calls ``simd/simd_fast_recip(_:)-1wyh`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_recip(_:)-3e7j2`` is called.
 @inlinable
 public func simd_recip(_ x: simd_double4) -> simd_double4 {
 #if __FAST_MATH__
@@ -8977,8 +8977,8 @@ public func simd_recip(_ x: simd_double4) -> simd_double4 {
 
 /// - Returns: Elementwise reciprocial of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_recip(_:)-8ifrd`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_recip(_:)-8pn0i`` is called.
+/// - Note: This function calls ``simd/simd_fast_recip(_:)-8ifrd`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_recip(_:)-8pn0i`` is called.
 @inlinable
 public func simd_recip(_ x: simd_double8) -> simd_double8 {
 #if __FAST_MATH__
@@ -9734,8 +9734,8 @@ public func simd_refract(_ x: simd_double4, _ n: simd_double4, _ eta: Double) ->
 
 /// - Returns: Reciprocal square root of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_rsqrt(_:)-3uzdo`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_rsqrt(_:)-5kfqk`` is called.
+/// - Note: This function calls ``simd/simd_fast_rsqrt(_:)-3uzdo`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_rsqrt(_:)-5kfqk`` is called.
 @inlinable
 public func simd_rsqrt(_ x: Float) -> Float {
 #if __FAST_MATH__
@@ -9747,8 +9747,8 @@ public func simd_rsqrt(_ x: Float) -> Float {
 
 /// - Returns: Elementwise reciprocal square root of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_rsqrt(_:)-5ej56`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_rsqrt(_:)-82l7m`` is called.
+/// - Note: This function calls ``simd/simd_fast_rsqrt(_:)-5ej56`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_rsqrt(_:)-82l7m`` is called.
 @inlinable
 public func simd_rsqrt(_ x: simd_float2) -> simd_float2 {
 #if __FAST_MATH__
@@ -9760,8 +9760,8 @@ public func simd_rsqrt(_ x: simd_float2) -> simd_float2 {
 
 /// - Returns: Elementwise reciprocal square root of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_rsqrt(_:)-7vnlb`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_rsqrt(_:)-6jgf3`` is called.
+/// - Note: This function calls ``simd/simd_fast_rsqrt(_:)-7vnlb`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_rsqrt(_:)-6jgf3`` is called.
 @inlinable
 public func simd_rsqrt(_ x: simd_float3) -> simd_float3 {
 #if __FAST_MATH__
@@ -9773,8 +9773,8 @@ public func simd_rsqrt(_ x: simd_float3) -> simd_float3 {
 
 /// - Returns: Elementwise reciprocal square root of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_rsqrt(_:)-buac`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_rsqrt(_:)-2pizv`` is called.
+/// - Note: This function calls ``simd/simd_fast_rsqrt(_:)-buac`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_rsqrt(_:)-2pizv`` is called.
 @inlinable
 public func simd_rsqrt(_ x: simd_float4) -> simd_float4 {
 #if __FAST_MATH__
@@ -9786,8 +9786,8 @@ public func simd_rsqrt(_ x: simd_float4) -> simd_float4 {
 
 /// - Returns: Elementwise reciprocal square root of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_rsqrt(_:)-1dqfw`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_rsqrt(_:)-66dfb`` is called.
+/// - Note: This function calls ``simd/simd_fast_rsqrt(_:)-1dqfw`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_rsqrt(_:)-66dfb`` is called.
 @inlinable
 public func simd_rsqrt(_ x: simd_float8) -> simd_float8 {
 #if __FAST_MATH__
@@ -9799,8 +9799,8 @@ public func simd_rsqrt(_ x: simd_float8) -> simd_float8 {
 
 /// - Returns: Elementwise reciprocal square root of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_rsqrt(_:)-1vwfa`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_rsqrt(_:)-cjjn`` is called.
+/// - Note: This function calls ``simd/simd_fast_rsqrt(_:)-1vwfa`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_rsqrt(_:)-cjjn`` is called.
 @inlinable
 public func simd_rsqrt(_ x: simd_float16) -> simd_float16 {
 #if __FAST_MATH__
@@ -9812,8 +9812,8 @@ public func simd_rsqrt(_ x: simd_float16) -> simd_float16 {
 
 /// - Returns: Reciprocal square root of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_rsqrt(_:)-3uyt0`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_rsqrt(_:)-5kewk`` is called.
+/// - Note: This function calls ``simd/simd_fast_rsqrt(_:)-3uyt0`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_rsqrt(_:)-5kewk`` is called.
 @inlinable
 public func simd_rsqrt(_ x: Double) -> Double {
 #if __FAST_MATH__
@@ -9825,8 +9825,8 @@ public func simd_rsqrt(_ x: Double) -> Double {
 
 /// - Returns: Elementwise reciprocal square root of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_rsqrt(_:)-9edef`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_rsqrt(_:)-8jef0`` is called.
+/// - Note: This function calls ``simd/simd_fast_rsqrt(_:)-9edef`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_rsqrt(_:)-8jef0`` is called.
 @inlinable
 public func simd_rsqrt(_ x: simd_double2) -> simd_double2 {
 #if __FAST_MATH__
@@ -9838,8 +9838,8 @@ public func simd_rsqrt(_ x: simd_double2) -> simd_double2 {
 
 /// - Returns: Elementwise reciprocal square root of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_rsqrt(_:)-4ygpl`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_rsqrt(_:)-7pyvm`` is called.
+/// - Note: This function calls ``simd/simd_fast_rsqrt(_:)-4ygpl`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_rsqrt(_:)-7pyvm`` is called.
 @inlinable
 public func simd_rsqrt(_ x: simd_double3) -> simd_double3 {
 #if __FAST_MATH__
@@ -9851,8 +9851,8 @@ public func simd_rsqrt(_ x: simd_double3) -> simd_double3 {
 
 /// - Returns: Elementwise reciprocal square root of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_rsqrt(_:)-6cpfi`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_rsqrt(_:)-5pj48`` is called.
+/// - Note: This function calls ``simd/simd_fast_rsqrt(_:)-6cpfi`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_rsqrt(_:)-5pj48`` is called.
 @inlinable
 public func simd_rsqrt(_ x: simd_double4) -> simd_double4 {
 #if __FAST_MATH__
@@ -9864,8 +9864,8 @@ public func simd_rsqrt(_ x: simd_double4) -> simd_double4 {
 
 /// - Returns: Elementwise reciprocal square root of *x*.
 ///
-/// - Note: This function calls ``kvSIMD/simd_fast_rsqrt(_:)-8ior8`` if `-ffast-math` compiler flag is specified.
-///         Otherwise ``kvSIMD/simd_precise_rsqrt(_:)-1m03u`` is called.
+/// - Note: This function calls ``simd/simd_fast_rsqrt(_:)-8ior8`` if `-ffast-math` compiler flag is specified.
+///         Otherwise ``simd/simd_precise_rsqrt(_:)-1m03u`` is called.
 @inlinable
 public func simd_rsqrt(_ x: simd_double8) -> simd_double8 {
 #if __FAST_MATH__
