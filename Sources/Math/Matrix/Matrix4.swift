@@ -6,220 +6,67 @@ public struct Matrix4<Scalar: BinaryFloatingPoint & Sendable>: Matrixable, Hasha
     public var m31, m32, m33, m34: Scalar
     public var m41, m42, m43, m44: Scalar
     
-    public var row1: Vector {
-        get { Vector4(x: m11, y: m12, z: m13, w: m14) }
-        set {
-            m11 = newValue.x
-            m12 = newValue.y
-            m13 = newValue.z
-            m14 = newValue.w
-        }
-    }
-    
-    public var row2: Vector {
-        get { Vector4(x: m21, y: m22, z: m23, w: m24) }
-        set {
-            m21 = newValue.x
-            m22 = newValue.y
-            m23 = newValue.z
-            m24 = newValue.w
-        }
-    }
-    
-    public var row3: Vector {
-        get { Vector4(x: m31, y: m32, z: m33, w: m34) }
-        set {
-            m31 = newValue.x
-            m32 = newValue.y
-            m33 = newValue.z
-            m34 = newValue.w
-        }
-    }
-    
-    public var row4: Vector {
-        get { Vector4(x: m41, y: m42, z: m43, w: m44) }
-        set {
-            m41 = newValue.x
-            m42 = newValue.y
-            m43 = newValue.z
-            m44 = newValue.w
-        }
-    }
-    
-    public var column1: Vector {
-        get { Vector4(x: m11, y: m21, z: m31, w: m41) }
-        set (vector) {
-            m11 = vector.x
-            m21 = vector.y
-            m31 = vector.z
-            m41 = vector.w
-        }
-    }
-    
-    public var column2: Vector {
-        get { Vector4(x: m12, y: m22, z: m32, w: m42) }
-        set {
-            m12 = newValue.x
-            m22 = newValue.y
-            m32 = newValue.z
-            m42 = newValue.w
-        }
-    }
-    
-    public var column3: Vector {
-        get { Vector4(x: m13, y: m23, z: m33, w: m43) }
-        set {
-            m13 = newValue.x
-            m23 = newValue.y
-            m33 = newValue.z
-            m43 = newValue.w
-        }
-    }
-    
-    public var column4: Vector {
-        get { Vector4(x: m14, y: m24, z: m34, w: m44) }
-        set {
-            m14 = newValue.x
-            m24 = newValue.y
-            m34 = newValue.z
-            m44 = newValue.w
-        }
-    }
-    
     public static var numRows: Int { 4 }
     
-    public subscript(row: Int) -> Vector {
-        get {
-            switch row {
-            case 0: return self.row1
-            case 1: return self.row2
-            case 2: return self.row3
-            case 3: return self.row4
-            default:
-                assertionFailure("Index out of range")
-                break
-            }
-            return .zero
-        }
-        set {
-            switch row {
-            case 0: self.row1 = newValue
-            case 1: self.row2 = newValue
-            case 2: self.row3 = newValue
-            case 3: self.row4 = newValue
-            default:
-                assertionFailure("Index out of range")
-                break
-            }
-        }
-    }
-    
-    public subscript(row: Int, column: Int) -> Scalar {
-        get {
-            switch (row, column) {
-            case (0, 0): return m11
-            case (0, 1): return m12
-            case (0, 2): return m13
-            case (0, 3): return m14
-            case (1, 0): return m21
-            case (1, 1): return m22
-            case (1, 2): return m23
-            case (1, 3): return m24
-            case (2, 0): return m31
-            case (2, 1): return m32
-            case (2, 2): return m33
-            case (2, 3): return m34
-            case (3, 0): return m41
-            case (3, 1): return m42
-            case (3, 2): return m43
-            case (3, 3): return m44
-            default:
-                assertionFailure("Index out of range")
-                break
-            }
-            return 0.0
-        }
-        set {
-            switch (row, column) {
-            case (0, 0): m11 = newValue
-            case (0, 1): m12 = newValue
-            case (0, 2): m13 = newValue
-            case (0, 3): m14 = newValue
-            case (1, 0): m21 = newValue
-            case (1, 1): m22 = newValue
-            case (1, 2): m23 = newValue
-            case (1, 3): m24 = newValue
-            case (2, 0): m31 = newValue
-            case (2, 1): m32 = newValue
-            case (2, 2): m33 = newValue
-            case (2, 3): m34 = newValue
-            case (3, 0): m41 = newValue
-            case (3, 1): m42 = newValue
-            case (3, 2): m43 = newValue
-            case (3, 3): m44 = newValue
-            default:
-                assertionFailure("Index out of range")
-                break
-            }
-        }
-    }
-    
     public static var identity: Matrix4 {
-        Matrix4(1.0, 0.0, 0.0, 0.0,
-                0.0, 1.0, 0.0, 0.0,
-                0.0, 0.0, 1.0, 0.0,
-                0.0, 0.0, 0.0, 1.0)
+        Matrix4(
+            1.0, 0.0, 0.0, 0.0,
+            0.0, 1.0, 0.0, 0.0,
+            0.0, 0.0, 1.0, 0.0,
+            0.0, 0.0, 0.0, 1.0
+        )
     }
     
     public init(_ matrix: Self = .identity) {
         self = matrix
     }
     
+    public init(
+        m11: Scalar, m12: Scalar, m13: Scalar, m14: Scalar,
+        m21: Scalar, m22: Scalar, m23: Scalar, m24: Scalar,
+        m31: Scalar, m32: Scalar, m33: Scalar, m34: Scalar,
+        m41: Scalar, m42: Scalar, m43: Scalar, m44: Scalar
+    ) {
+        self.m11 = m11
+        self.m12 = m12
+        self.m13 = m13
+        self.m14 = m14
+        self.m21 = m21
+        self.m22 = m22
+        self.m23 = m23
+        self.m24 = m24
+        self.m31 = m31
+        self.m32 = m32
+        self.m33 = m33
+        self.m34 = m34
+        self.m41 = m41
+        self.m42 = m42
+        self.m43 = m43
+        self.m44 = m44
+    }
+    
     public init<T: BinaryFloatingPoint>(
         _ m11: T, _ m12: T, _ m13: T, _ m14: T,
         _ m21: T, _ m22: T, _ m23: T, _ m24: T,
         _ m31: T, _ m32: T, _ m33: T, _ m34: T,
-        _ m41: T, _ m42: T, _ m43: T, _ m44: T) {
-            self.m11 = Scalar(m11)
-            self.m12 = Scalar(m12)
-            self.m13 = Scalar(m13)
-            self.m14 = Scalar(m14)
-            self.m21 = Scalar(m21)
-            self.m22 = Scalar(m22)
-            self.m23 = Scalar(m23)
-            self.m24 = Scalar(m24)
-            self.m31 = Scalar(m31)
-            self.m32 = Scalar(m32)
-            self.m33 = Scalar(m33)
-            self.m34 = Scalar(m34)
-            self.m41 = Scalar(m41)
-            self.m42 = Scalar(m42)
-            self.m43 = Scalar(m43)
-            self.m44 = Scalar(m44)
-        }
-    
-    public init<T: BinaryFloatingPoint>(m11: T, m12: T, m13: T, m14: T,
-                                        m21: T, m22: T, m23: T, m24: T,
-                                        m31: T, m32: T, m33: T, m34: T,
-                                        m41: T, m42: T, m43: T, m44: T) {
-        self.init(m11, m12, m13, m14,
-                  m21, m22, m23, m24,
-                  m31, m32, m33, m34,
-                  m41, m42, m43, m44)
-    }
-    
-    public init(row1: Vector, row2: Vector, row3: Vector, row4: Vector) {
-        self.init(row1.x, row1.y, row1.z, row1.w,
-                  row2.x, row2.y, row2.z, row2.w,
-                  row3.x, row3.y, row3.z, row3.w,
-                  row4.x, row4.y, row4.z, row4.w)
-    }
-    
-    public init(column1: Vector, column2: Vector, column3: Vector, column4: Vector) {
-        self.init(column1.x, column2.x, column3.x, column4.x,
-                  column1.y, column2.y, column3.y, column4.y,
-                  column1.z, column2.z, column3.z, column4.z,
-                  column1.w, column2.w, column3.w, column4.w)
+        _ m41: T, _ m42: T, _ m43: T, _ m44: T
+    ) {
+        self.m11 = Scalar(m11)
+        self.m12 = Scalar(m12)
+        self.m13 = Scalar(m13)
+        self.m14 = Scalar(m14)
+        self.m21 = Scalar(m21)
+        self.m22 = Scalar(m22)
+        self.m23 = Scalar(m23)
+        self.m24 = Scalar(m24)
+        self.m31 = Scalar(m31)
+        self.m32 = Scalar(m32)
+        self.m33 = Scalar(m33)
+        self.m34 = Scalar(m34)
+        self.m41 = Scalar(m41)
+        self.m42 = Scalar(m42)
+        self.m43 = Scalar(m43)
+        self.m44 = Scalar(m44)
     }
     
     public var determinant: Scalar {
@@ -272,13 +119,6 @@ public struct Matrix4<Scalar: BinaryFloatingPoint & Sendable>: Matrixable, Hasha
         let abcdefghijklmnopqrstuvw = abcdefghijklmnopqrstuv - w
         let abcdefghijklmnopqrstuvwx = abcdefghijklmnopqrstuvw + x
         return abcdefghijklmnopqrstuvwx
-    }
-    
-    public var isDiagonal: Bool {
-        m12 == 0.0 && m13 == 0.0 && m14 == 0.0 &&
-        m21 == 0.0 && m23 == 0.0 && m24 == 0.0 &&
-        m31 == 0.0 && m32 == 0.0 && m34 == 0.0 &&
-        m41 == 0.0 && m42 == 0.0 && m43 == 0.0
     }
     
     public func inverted() -> Self? {
@@ -399,61 +239,288 @@ public struct Matrix4<Scalar: BinaryFloatingPoint & Sendable>: Matrixable, Hasha
         let m44f = self.m11 * self.m22 * self.m33
         let m44 = (m44a - m44b + m44c - m44d - m44e + m44f) * inv
         
-        return Matrix4(m11, m12, m13, m14,
-                       m21, m22, m23, m24,
-                       m31, m32, m33, m34,
-                       m41, m42, m43, m44)
+        return Matrix4(
+            m11, m12, m13, m14,
+            m21, m22, m23, m24,
+            m31, m32, m33, m34,
+            m41, m42, m43, m44
+        )
     }
     
     public func transposed() -> Self {
-        return Matrix4(row1: self.column1,
-                       row2: self.column2,
-                       row3: self.column3,
-                       row4: self.column4)
+        return Matrix4(
+            row1: self.column1,
+            row2: self.column2,
+            row3: self.column3,
+            row4: self.column4
+        )
     }
     
     public func concatenating(_ m: Self) -> Self {
         let (row1, row2, row3, row4) = (self.row1, self.row2, self.row3, self.row4)
         let (col1, col2, col3, col4) = (m.column1, m.column2, m.column3, m.column4)
         let dot = Vector4<Scalar>.dot
-        return Matrix4(dot(row1, col1), dot(row1, col2), dot(row1, col3), dot(row1, col4),
-                       dot(row2, col1), dot(row2, col2), dot(row2, col3), dot(row2, col4),
-                       dot(row3, col1), dot(row3, col2), dot(row3, col3), dot(row3, col4),
-                       dot(row4, col1), dot(row4, col2), dot(row4, col3), dot(row4, col4))
+        return Matrix4(
+            dot(row1, col1), dot(row1, col2), dot(row1, col3), dot(row1, col4),
+            dot(row2, col1), dot(row2, col2), dot(row2, col3), dot(row2, col4),
+            dot(row3, col1), dot(row3, col2), dot(row3, col3), dot(row3, col4),
+            dot(row4, col1), dot(row4, col2), dot(row4, col3), dot(row4, col4)
+        )
         
     }
     
     public static func + (lhs: Self, rhs: Self) -> Self {
-        return Matrix4(row1: lhs.row1 + rhs.row1,
-                       row2: lhs.row2 + rhs.row2,
-                       row3: lhs.row3 + rhs.row3,
-                       row4: lhs.row4 + rhs.row4)
+        return Matrix4(
+            row1: lhs.row1 + rhs.row1,
+            row2: lhs.row2 + rhs.row2,
+            row3: lhs.row3 + rhs.row3,
+            row4: lhs.row4 + rhs.row4
+        )
     }
     
     public static func - (lhs: Self, rhs: Self) -> Self {
-        return Matrix4(row1: lhs.row1 - rhs.row1,
-                       row2: lhs.row2 - rhs.row2,
-                       row3: lhs.row3 - rhs.row3,
-                       row4: lhs.row4 - rhs.row4)
+        return Matrix4(
+            row1: lhs.row1 - rhs.row1,
+            row2: lhs.row2 - rhs.row2,
+            row3: lhs.row3 - rhs.row3,
+            row4: lhs.row4 - rhs.row4
+        )
     }
     
     public static func * (lhs: Self, rhs: some BinaryFloatingPoint) -> Self {
-        return Matrix4(row1: lhs.row1 * rhs,
-                       row2: lhs.row2 * rhs,
-                       row3: lhs.row3 * rhs,
-                       row4: lhs.row4 * rhs)
+        return Matrix4(
+            row1: lhs.row1 * rhs,
+            row2: lhs.row2 * rhs,
+            row3: lhs.row3 * rhs,
+            row4: lhs.row4 * rhs
+        )
     }
     
     public static func / (lhs: some BinaryFloatingPoint, rhs: Self) -> Self {
-        return Matrix4(row1: Scalar(lhs) / rhs.row1,
-                       row2: Scalar(lhs) / rhs.row2,
-                       row3: Scalar(lhs) / rhs.row3,
-                       row4: Scalar(lhs) / rhs.row4)
+        return Matrix4(
+            row1: Scalar(lhs) / rhs.row1,
+            row2: Scalar(lhs) / rhs.row2,
+            row3: Scalar(lhs) / rhs.row3,
+            row4: Scalar(lhs) / rhs.row4
+        )
     }
 }
 
+// MARK: - Diagonal
+
+public extension Matrix4 {
+    init(diagonal: Vector) {
+        self.init(
+            diagonal.x, 0.0, 0.0, 0.0,
+            0.0, diagonal.y, 0.0, 0.0,
+            0.0, 0.0, diagonal.z, 0.0,
+            0.0, 0.0, 0.0, diagonal.w
+        )
+    }
+    
+    var diagonal: Vector {
+        Vector4(m11, m22, m33, m44)
+    }
+    
+    var isDiagonal: Bool {
+        m12 == 0.0 && m13 == 0.0 && m14 == 0.0 &&
+        m21 == 0.0 && m23 == 0.0 && m24 == 0.0 &&
+        m31 == 0.0 && m32 == 0.0 && m34 == 0.0 &&
+        m41 == 0.0 && m42 == 0.0 && m43 == 0.0
+    }
+}
+
+// MARK: - Vectors from matrix
+
+public extension Matrix4 {
+    init(row1: Vector, row2: Vector, row3: Vector, row4: Vector) {
+        self.init(
+            row1.x, row1.y, row1.z, row1.w,
+            row2.x, row2.y, row2.z, row2.w,
+            row3.x, row3.y, row3.z, row3.w,
+            row4.x, row4.y, row4.z, row4.w
+        )
+    }
+    
+    init(column1: Vector, column2: Vector, column3: Vector, column4: Vector) {
+        self.init(
+            column1.x, column2.x, column3.x, column4.x,
+            column1.y, column2.y, column3.y, column4.y,
+            column1.z, column2.z, column3.z, column4.z,
+            column1.w, column2.w, column3.w, column4.w
+        )
+    }
+    
+    var row1: Vector {
+        get { Vector4(x: m11, y: m12, z: m13, w: m14) }
+        set {
+            m11 = newValue.x
+            m12 = newValue.y
+            m13 = newValue.z
+            m14 = newValue.w
+        }
+    }
+    
+    var row2: Vector {
+        get { Vector4(x: m21, y: m22, z: m23, w: m24) }
+        set {
+            m21 = newValue.x
+            m22 = newValue.y
+            m23 = newValue.z
+            m24 = newValue.w
+        }
+    }
+    
+    var row3: Vector {
+        get { Vector4(x: m31, y: m32, z: m33, w: m34) }
+        set {
+            m31 = newValue.x
+            m32 = newValue.y
+            m33 = newValue.z
+            m34 = newValue.w
+        }
+    }
+    
+    var row4: Vector {
+        get { Vector4(x: m41, y: m42, z: m43, w: m44) }
+        set {
+            m41 = newValue.x
+            m42 = newValue.y
+            m43 = newValue.z
+            m44 = newValue.w
+        }
+    }
+    
+    var column1: Vector {
+        get { Vector4(x: m11, y: m21, z: m31, w: m41) }
+        set (vector) {
+            m11 = vector.x
+            m21 = vector.y
+            m31 = vector.z
+            m41 = vector.w
+        }
+    }
+    
+    var column2: Vector {
+        get { Vector4(x: m12, y: m22, z: m32, w: m42) }
+        set {
+            m12 = newValue.x
+            m22 = newValue.y
+            m32 = newValue.z
+            m42 = newValue.w
+        }
+    }
+    
+    var column3: Vector {
+        get { Vector4(x: m13, y: m23, z: m33, w: m43) }
+        set {
+            m13 = newValue.x
+            m23 = newValue.y
+            m33 = newValue.z
+            m43 = newValue.w
+        }
+    }
+    
+    var column4: Vector {
+        get { Vector4(x: m14, y: m24, z: m34, w: m44) }
+        set {
+            m14 = newValue.x
+            m24 = newValue.y
+            m34 = newValue.z
+            m44 = newValue.w
+        }
+    }
+}
+
+// MARK: - Subscript
+
+public extension Matrix4 {
+    subscript(row: Int) -> Vector {
+        get {
+            switch row {
+            case 0: return self.row1
+            case 1: return self.row2
+            case 2: return self.row3
+            case 3: return self.row4
+            default:
+                assertionFailure("Index out of range")
+                break
+            }
+            return .zero
+        }
+        set {
+            switch row {
+            case 0: self.row1 = newValue
+            case 1: self.row2 = newValue
+            case 2: self.row3 = newValue
+            case 3: self.row4 = newValue
+            default:
+                assertionFailure("Index out of range")
+                break
+            }
+        }
+    }
+    
+    subscript(row: Int, column: Int) -> Scalar {
+        get {
+            switch (row, column) {
+            case (0, 0): return m11
+            case (0, 1): return m12
+            case (0, 2): return m13
+            case (0, 3): return m14
+            case (1, 0): return m21
+            case (1, 1): return m22
+            case (1, 2): return m23
+            case (1, 3): return m24
+            case (2, 0): return m31
+            case (2, 1): return m32
+            case (2, 2): return m33
+            case (2, 3): return m34
+            case (3, 0): return m41
+            case (3, 1): return m42
+            case (3, 2): return m43
+            case (3, 3): return m44
+            default:
+                assertionFailure("Index out of range")
+                break
+            }
+            return 0.0
+        }
+        set {
+            switch (row, column) {
+            case (0, 0): m11 = newValue
+            case (0, 1): m12 = newValue
+            case (0, 2): m13 = newValue
+            case (0, 3): m14 = newValue
+            case (1, 0): m21 = newValue
+            case (1, 1): m22 = newValue
+            case (1, 2): m23 = newValue
+            case (1, 3): m24 = newValue
+            case (2, 0): m31 = newValue
+            case (2, 1): m32 = newValue
+            case (2, 2): m33 = newValue
+            case (2, 3): m34 = newValue
+            case (3, 0): m41 = newValue
+            case (3, 1): m42 = newValue
+            case (3, 2): m43 = newValue
+            case (3, 3): m44 = newValue
+            default:
+                assertionFailure("Index out of range")
+                break
+            }
+        }
+    }
+}
+
+// MARK: - Tuples
+
 public extension Matrix4 {
 #if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
+    @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
+    init(_ m: Half4x4) {
+        self.init(row1: Vector4(m.0), row2: Vector4(m.1), row3: Vector4(m.2), row4: Vector4(m.3))
+    }
+    
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     var half4x4: Half4x4 {
         get { (self.row1.half4, self.row2.half4, self.row3.half4, self.row4.half4) }
@@ -465,6 +532,10 @@ public extension Matrix4 {
         }
     }
 #endif
+    init(_ m: Float4x4) {
+        self.init(row1: Vector4(m.0), row2: Vector4(m.1), row3: Vector4(m.2), row4: Vector4(m.3))
+    }
+    
     var float4x4: Float4x4 {
         get { (self.row1.float4, self.row2.float4, self.row3.float4, self.row4.float4) }
         set(v) {
@@ -473,6 +544,10 @@ public extension Matrix4 {
             self.row3.float4 = v.2
             self.row4.float4 = v.3
         }
+    }
+    
+    init(_ m: Double4x4) {
+        self.init(row1: Vector4(m.0), row2: Vector4(m.1), row3: Vector4(m.2), row4: Vector4(m.3))
     }
     
     var double4x4: Double4x4 {
@@ -484,20 +559,9 @@ public extension Matrix4 {
             self.row4.double4 = v.3
         }
     }
-#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
-    @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
-    init(_ m: Half4x4) {
-        self.init(row1: Vector4(m.0), row2: Vector4(m.1), row3: Vector4(m.2), row4: Vector4(m.3))
-    }
-#endif
-    init(_ m: Float4x4) {
-        self.init(row1: Vector4(m.0), row2: Vector4(m.1), row3: Vector4(m.2), row4: Vector4(m.3))
-    }
-    
-    init(_ m: Double4x4) {
-        self.init(row1: Vector4(m.0), row2: Vector4(m.1), row3: Vector4(m.2), row4: Vector4(m.3))
-    }
 }
+
+// MARK: - Vector extensions
 
 public extension Vector3 {
     // homogeneous transform

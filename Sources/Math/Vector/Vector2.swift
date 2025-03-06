@@ -7,40 +7,19 @@ public struct Vector2<Scalar: BinaryFloatingPoint & Sendable>: Vectorable, Hasha
     }
 
     public static var components: Int { 2 }
-    
-    public subscript(index: Int) -> Scalar {
-        get {
-            switch index {
-            case 0: return self.x
-            case 1: return self.y
-            default:
-                assertionFailure("Index out of range")
-                break
-            }
-            return .zero
-        }
-        set (value) {
-            switch index {
-            case 0: self.x = value
-            case 1: self.y = value
-            default:
-                assertionFailure("Index out of range")
-                break
-            }
-        }
-    }
 
     public init(_ vector: Self = .zero) {
         self = vector
     }
     
-    public init<T: BinaryFloatingPoint>(_ x: T, _ y: T) {
-        self.x = Scalar(x)
-        self.y = Scalar(y)
+    public init(_ x: Scalar, _ y: Scalar) {
+        self.x = x
+        self.y = y
     }
 
     public init<T: BinaryFloatingPoint>(x: T, y: T) {
-        self.init(x, y)
+        self.x = Scalar(x)
+        self.y = Scalar(y)
     }
 
     public static func dot(_ v1: Vector2, _ v2: Vector2) -> Scalar {
@@ -106,8 +85,42 @@ public struct Vector2<Scalar: BinaryFloatingPoint & Sendable>: Vectorable, Hasha
     }
 }
 
+// MARK: - Subscript
+
+public extension Vector2 {
+    subscript(index: Int) -> Scalar {
+        get {
+            switch index {
+            case 0: return self.x
+            case 1: return self.y
+            default:
+                assertionFailure("Index out of range")
+                break
+            }
+            return .zero
+        }
+        set (value) {
+            switch index {
+            case 0: self.x = value
+            case 1: self.y = value
+            default:
+                assertionFailure("Index out of range")
+                break
+            }
+        }
+    }
+}
+
+// MARK: - Tuples
+
 public extension Vector2 {
 #if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
+    @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
+    init(_ v: Half2) {
+        self.x = Scalar(v.0)
+        self.y = Scalar(v.1)
+    }
+    
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     var half2: Half2 {
         get { (Float16(self.x), Float16(self.y)) }
@@ -117,12 +130,22 @@ public extension Vector2 {
         }
     }
 #endif
+    init(_ v: Float2) {
+        self.x = Scalar(v.0)
+        self.y = Scalar(v.1)
+    }
+    
     var float2: Float2 {
         get { (Float32(self.x), Float32(self.y)) }
         set(v) {
             self.x = Scalar(v.0)
             self.y = Scalar(v.1)
         }
+    }
+    
+    init(_ v: Double2) {
+        self.x = Scalar(v.0)
+        self.y = Scalar(v.1)
     }
 
     var double2: Double2 {
@@ -131,21 +154,5 @@ public extension Vector2 {
             self.x = Scalar(v.0)
             self.y = Scalar(v.1)
         }
-    }
-#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
-    @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
-    init(_ v: Half2) {
-        self.x = Scalar(v.0)
-        self.y = Scalar(v.1)
-    }
-#endif
-    init(_ v: Float2) {
-        self.x = Scalar(v.0)
-        self.y = Scalar(v.1)
-    }
-    
-    init(_ v: Double2) {
-        self.x = Scalar(v.0)
-        self.y = Scalar(v.1)
     }
 }

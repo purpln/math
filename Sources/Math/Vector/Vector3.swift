@@ -8,30 +8,6 @@ public struct Vector3<Scalar: BinaryFloatingPoint & Sendable>: Vectorable, Hasha
     }
 
     public static var components: Int { 3 }
-    
-    public subscript(index: Int) -> Scalar {
-        get {
-            switch index {
-            case 0: return self.x
-            case 1: return self.y
-            case 2: return self.z
-            default:
-                assertionFailure("Index out of range")
-                break
-            }
-            return .zero
-        }
-        set (value) {
-            switch index {
-            case 0: self.x = value
-            case 1: self.y = value
-            case 2: self.z = value
-            default:
-                assertionFailure("Index out of range")
-                break
-            }
-        }
-    }
 
     public init(_ vector: Self = .zero) {
         self = vector
@@ -41,26 +17,29 @@ public struct Vector3<Scalar: BinaryFloatingPoint & Sendable>: Vectorable, Hasha
         self.init(v.x, v.y, Scalar(z))
     }
 
-    public init<T: BinaryFloatingPoint>(_ x: T, _ y: T, _ z: T) {
+    public init(_ x: Scalar, _ y: Scalar, _ z: Scalar) {
+        self.x = x
+        self.y = y
+        self.z = z
+    }
+
+    public init<T: BinaryFloatingPoint>(x: T, y: T, z: T) {
         self.x = Scalar(x)
         self.y = Scalar(y)
         self.z = Scalar(z)
     }
 
-    public init<T: BinaryFloatingPoint>(x: T, y: T, z: T) {
-        self.init(x, y, z)
-    }
-
     public static func dot(_ v1: Vector3, _ v2: Vector3) -> Scalar {
         v1.x * v2.x + v1.y * v2.y + v1.z * v2.z
     }
-    /*
+    
     public static func cross(_ v1: Vector3, _ v2: Vector3) -> Vector3 {
-        Vector3(x: v1.y * v2.z - v1.z * v2.y,
-                y: v1.z * v2.x - v1.x * v2.z,
-                z: v1.x * v2.y - v1.y * v2.x)
+        let x = v1.y * v2.z - v1.z * v2.y
+        let y = v1.z * v2.x - v1.x * v2.z
+        let z = v1.x * v2.y - v1.y * v2.x
+        return Vector3(x: x, y: y, z: z)
     }
-    */
+    
     public func rotated(x radian: some BinaryFloatingPoint) -> Vector3<Scalar> {
         if radian.isZero  { return self }
         let r = Double(radian)
@@ -147,8 +126,45 @@ public struct Vector3<Scalar: BinaryFloatingPoint & Sendable>: Vectorable, Hasha
     }
 }
 
+// MARK: - Subscript
+
+public extension Vector3 {
+    subscript(index: Int) -> Scalar {
+        get {
+            switch index {
+            case 0: return self.x
+            case 1: return self.y
+            case 2: return self.z
+            default:
+                assertionFailure("Index out of range")
+                break
+            }
+            return .zero
+        }
+        set (value) {
+            switch index {
+            case 0: self.x = value
+            case 1: self.y = value
+            case 2: self.z = value
+            default:
+                assertionFailure("Index out of range")
+                break
+            }
+        }
+    }
+}
+
+// MARK: - Tuples
+
 public extension Vector3 {
 #if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
+    @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
+    init(_ v: Half3) {
+        self.x = Scalar(v.0)
+        self.y = Scalar(v.1)
+        self.z = Scalar(v.2)
+    }
+    
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     var half3: Half3 {
         get {
@@ -161,6 +177,12 @@ public extension Vector3 {
         }
     }
 #endif
+    init(_ v: Float3) {
+        self.x = Scalar(v.0)
+        self.y = Scalar(v.1)
+        self.z = Scalar(v.2)
+    }
+    
     var float3: Float3 {
         get {
             (Float32(self.x), Float32(self.y), Float32(self.z))
@@ -170,6 +192,12 @@ public extension Vector3 {
             self.y = Scalar(v.1)
             self.z = Scalar(v.2)
         }
+    }
+    
+    init(_ v: Double3) {
+        self.x = Scalar(v.0)
+        self.y = Scalar(v.1)
+        self.z = Scalar(v.2)
     }
 
     var double3: Double3 {
@@ -181,24 +209,5 @@ public extension Vector3 {
             self.y = Scalar(v.1)
             self.z = Scalar(v.2)
         }
-    }
-#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
-    @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
-    init(_ v: Half3) {
-        self.x = Scalar(v.0)
-        self.y = Scalar(v.1)
-        self.z = Scalar(v.2)
-    }
-#endif
-    init(_ v: Float3) {
-        self.x = Scalar(v.0)
-        self.y = Scalar(v.1)
-        self.z = Scalar(v.2)
-    }
-    
-    init(_ v: Double3) {
-        self.x = Scalar(v.0)
-        self.y = Scalar(v.1)
-        self.z = Scalar(v.2)
     }
 }

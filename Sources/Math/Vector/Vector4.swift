@@ -9,32 +9,6 @@ public struct Vector4<Scalar: BinaryFloatingPoint & Sendable>: Vectorable, Hasha
     }
 
     public static var components: Int { 4 }
-    
-    public subscript(index: Int) -> Scalar {
-        get {
-            switch index {
-            case 0: return self.x
-            case 1: return self.y
-            case 2: return self.z
-            case 3: return self.w
-            default:
-                assertionFailure("Index out of range")
-                break
-            }
-            return .zero
-        }
-        set (value) {
-            switch index {
-            case 0: self.x = value
-            case 1: self.y = value
-            case 2: self.z = value
-            case 3: self.w = value
-            default:
-                assertionFailure("Index out of range")
-                break
-            }
-        }
-    }
 
     public init(_ vector: Self = .zero) {
         self = vector
@@ -44,15 +18,18 @@ public struct Vector4<Scalar: BinaryFloatingPoint & Sendable>: Vectorable, Hasha
         self.init(v.x, v.y, v.z, Scalar(w))
     }
 
-    public init<T: BinaryFloatingPoint>(_ x: T, _ y: T, _ z: T, _ w: T) {
+    public init(_ x: Scalar, _ y: Scalar, _ z: Scalar, _ w: Scalar) {
+        self.x = x
+        self.y = y
+        self.z = z
+        self.w = w
+    }
+
+    public init<T: BinaryFloatingPoint>(x: T, y: T, z: T, w: T) {
         self.x = Scalar(x)
         self.y = Scalar(y)
         self.z = Scalar(z)
         self.w = Scalar(w)
-    }
-
-    public init<T: BinaryFloatingPoint>(x: T, y: T, z: T, w: T) {
-        self.init(x, y, z, w)
     }
 
     public static func dot(_ lhs: Vector4, _ rhs: Vector4) -> Scalar {
@@ -108,8 +85,48 @@ public struct Vector4<Scalar: BinaryFloatingPoint & Sendable>: Vectorable, Hasha
     }
 }
 
+// MARK: - Subscript
+
+public extension Vector4 {
+    subscript(index: Int) -> Scalar {
+        get {
+            switch index {
+            case 0: return self.x
+            case 1: return self.y
+            case 2: return self.z
+            case 3: return self.w
+            default:
+                assertionFailure("Index out of range")
+                break
+            }
+            return .zero
+        }
+        set (value) {
+            switch index {
+            case 0: self.x = value
+            case 1: self.y = value
+            case 2: self.z = value
+            case 3: self.w = value
+            default:
+                assertionFailure("Index out of range")
+                break
+            }
+        }
+    }
+}
+
+// MARK: - Tuples
+
 public extension Vector4 {
 #if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
+    @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
+    init(_ v: Half4) {
+        self.x = Scalar(v.0)
+        self.y = Scalar(v.1)
+        self.z = Scalar(v.2)
+        self.w = Scalar(v.3)
+    }
+    
     @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
     var half4: Half4 {
         get {
@@ -123,6 +140,13 @@ public extension Vector4 {
         }
     }
 #endif
+    init(_ v: Float4) {
+        self.x = Scalar(v.0)
+        self.y = Scalar(v.1)
+        self.z = Scalar(v.2)
+        self.w = Scalar(v.3)
+    }
+    
     var float4: Float4 {
         get {
             (Float32(self.x), Float32(self.y), Float32(self.z), Float32(self.w))
@@ -133,6 +157,13 @@ public extension Vector4 {
             self.z = Scalar(v.2)
             self.w = Scalar(v.3)
         }
+    }
+    
+    init(_ v: Double4) {
+        self.x = Scalar(v.0)
+        self.y = Scalar(v.1)
+        self.z = Scalar(v.2)
+        self.w = Scalar(v.3)
     }
 
     var double4: Double4 {
@@ -145,27 +176,5 @@ public extension Vector4 {
             self.z = Scalar(v.2)
             self.w = Scalar(v.3)
         }
-    }
-#if !((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
-    @available(macOS 11, iOS 14, watchOS 7, tvOS 14, *)
-    init(_ v: Half4) {
-        self.x = Scalar(v.0)
-        self.y = Scalar(v.1)
-        self.z = Scalar(v.2)
-        self.w = Scalar(v.3)
-    }
-#endif
-    init(_ v: Float4) {
-        self.x = Scalar(v.0)
-        self.y = Scalar(v.1)
-        self.z = Scalar(v.2)
-        self.w = Scalar(v.3)
-    }
-    
-    init(_ v: Double4) {
-        self.x = Scalar(v.0)
-        self.y = Scalar(v.1)
-        self.z = Scalar(v.2)
-        self.w = Scalar(v.3)
     }
 }
