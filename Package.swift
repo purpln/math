@@ -2,11 +2,12 @@
 
 import PackageDescription
 
-let package = Package(name: "Math", products: [
-    .library(name: "Math", targets: ["Math"]),
+let package = Package(name: "math", products: [
+    .library(name: "math", targets: ["math"]),
+    .library(name: "simd", targets: ["simd"]),
 ], targets: [
-    .target(name: "Math", dependencies: [
-        "Mathematics"
+    .systemLibrary(name: "math"),
+    .target(name: "simd", dependencies: [
+        "math"
     ]),
-    .systemLibrary(name: "Mathematics"),
 ])
