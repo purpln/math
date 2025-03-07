@@ -9,5 +9,10 @@ let package = Package(name: "math", products: [
     .systemLibrary(name: "math"),
     .target(name: "simd", dependencies: [
         "math"
+    ], cSettings: [
+        .unsafeFlags(["-ffast-math"])
     ]),
+    .executableTarget(name: "Test", dependencies: [
+        "math", "simd"
+    ])
 ])
