@@ -12,7 +12,4 @@ let package = Package(name: "math", products: [
     ], cSettings: [
         .unsafeFlags(["-ffast-math"])
     ]),
-    .executableTarget(name: "Test", dependencies: [
-        "math", "simd"
-    ])
 ])
