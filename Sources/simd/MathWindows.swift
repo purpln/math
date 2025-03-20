@@ -1,4 +1,4 @@
-#if os(Linux) || os(Android) || os(WASI)
+#if os(Windows)
 import math
 
 @inline(__always)
@@ -148,7 +148,7 @@ func scalbn(_ a: Float, _ b: CInt) -> Float {
 @inline(__always)
 @usableFromInline
 func scalbln(_ a: Float, _ b: Int) -> Float {
-    scalblnf(a, b)
+    scalblnf(a, CInt(b))
 }
 
 @inline(__always)
@@ -232,7 +232,7 @@ func rint(_ x: Float) -> Float {
 @inline(__always)
 @usableFromInline
 func lrint(_ x: Float) -> Int {
-    lrintf(x)
+    Int(lrintf(x))
 }
 
 @inline(__always)
@@ -244,7 +244,7 @@ func round(_ x: Float) -> Float {
 @inline(__always)
 @usableFromInline
 func lround(_ x: Float) -> Int {
-    lroundf(x)
+    Int(lroundf(x))
 }
 
 @inline(__always)
